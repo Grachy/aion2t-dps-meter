@@ -5,387 +5,336 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>aion2t.com DPS Meter — Real-time DPS overlay for Aion 2</title>
   <meta name="description" content="Free real-time DPS overlay for Aion 2 (PC). Shows damage for all party members with skill breakdown, boss tracking, and 10 languages." />
-  <meta property="og:title" content="aion2t.com DPS Meter" />
-  <meta property="og:description" content="Free real-time DPS overlay for Aion 2 (PC)" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     :root {
-      --bg: #0d0e14;
-      --surface: #161820;
-      --surface2: #1e2030;
-      --accent: #f0a840;
-      --accent2: #e07820;
-      --text: #e4e6f0;
-      --muted: #8890a8;
-      --border: #2a2d3e;
-      --radius: 12px;
+      --bg: #0d0e14; --surface: #161820; --surface2: #1e2030;
+      --accent: #f0a840; --accent2: #e07820;
+      --text: #e4e6f0; --muted: #8890a8; --border: #2a2d3e; --radius: 12px;
     }
-
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-      min-height: 100vh;
-    }
-
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
     a { color: var(--accent); text-decoration: none; }
     a:hover { text-decoration: underline; }
 
-    /* ── Hero ── */
-    .hero {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      padding: 80px 24px 60px;
-      background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(240,168,64,.12) 0%, transparent 70%);
-    }
-
-    .hero h1 {
-      font-size: clamp(2rem, 5vw, 3.2rem);
-      font-weight: 800;
-      letter-spacing: -.02em;
-      margin-bottom: 16px;
-    }
-
+    /* hero */
+    .hero { display: flex; flex-direction: column; align-items: center; text-align: center; padding: 80px 24px 60px; background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(240,168,64,.12) 0%, transparent 70%); }
+    .hero h1 { font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 800; letter-spacing: -.02em; margin-bottom: 16px; }
     .hero h1 span { color: var(--accent); }
-
-    .hero p {
-      font-size: 1.15rem;
-      color: var(--muted);
-      max-width: 540px;
-      margin-bottom: 36px;
-    }
-
-    .badges {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-      justify-content: center;
-      margin-bottom: 36px;
-    }
-
+    .hero p { font-size: 1.15rem; color: var(--muted); max-width: 580px; margin-bottom: 36px; }
+    .badges { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; margin-bottom: 36px; }
     .badges img { height: 22px; border-radius: 4px; }
-
-    .btn-group {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 14px 28px;
-      border-radius: 8px;
-      font-size: 1rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: opacity .15s, transform .15s;
-    }
-
+    .btn-group { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; }
+    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 14px 28px; border-radius: 8px; font-size: 1rem; font-weight: 600; cursor: pointer; transition: opacity .15s, transform .15s; }
     .btn:hover { opacity: .88; transform: translateY(-1px); text-decoration: none; }
     .btn-primary { background: linear-gradient(135deg, var(--accent), var(--accent2)); color: #0d0e14; }
     .btn-secondary { background: var(--surface2); color: var(--text); border: 1px solid var(--border); }
 
-    /* ── Features ── */
-    .section {
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 60px 24px;
-    }
+    /* lang bar */
+    .lang-bar { display: flex; flex-wrap: wrap; gap: 6px; justify-content: center; padding: 24px 24px 0; }
+    .lang-btn { background: var(--surface2); border: 1px solid var(--border); border-radius: 20px; padding: 5px 14px; font-size: .85rem; color: var(--muted); cursor: pointer; transition: all .15s; }
+    .lang-btn:hover, .lang-btn.active { background: var(--accent); color: #0d0e14; border-color: var(--accent); font-weight: 600; }
 
-    .section-title {
-      font-size: 1.6rem;
-      font-weight: 700;
-      margin-bottom: 36px;
-      text-align: center;
-    }
+    /* desc section */
+    .desc-section { max-width: 720px; margin: 0 auto; padding: 40px 24px 0; }
+    .desc-block { display: none; }
+    .desc-block.active { display: block; }
+    .desc-block h2 { font-size: 1.4rem; font-weight: 700; margin-bottom: 16px; }
+    .desc-block p { color: var(--muted); margin-bottom: 12px; }
+    .desc-block ul { color: var(--muted); padding-left: 20px; }
+    .desc-block ul li { margin-bottom: 6px; }
+    .desc-block ul li strong { color: var(--text); }
 
-    .features-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 16px;
-    }
+    /* screenshots */
+    .section { max-width: 1100px; margin: 0 auto; padding: 60px 24px; }
+    .section-title { font-size: 1.6rem; font-weight: 700; margin-bottom: 36px; text-align: center; }
+    .screenshots { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 16px; }
+    .screenshot { border-radius: var(--radius); overflow: hidden; border: 1px solid var(--border); transition: border-color .2s; }
+    .screenshot:hover { border-color: var(--accent); }
+    .screenshot img { width: 100%; display: block; }
+    .screenshot-label { background: var(--surface); padding: 10px 14px; font-size: .9rem; color: var(--muted); }
 
-    .feature-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 24px;
-      transition: border-color .2s;
-    }
-
+    /* features */
+    .features-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; }
+    .feature-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; transition: border-color .2s; }
     .feature-card:hover { border-color: var(--accent); }
+    .feature-icon { font-size: 1.8rem; margin-bottom: 12px; }
+    .feature-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 8px; }
+    .feature-card p { font-size: .9rem; color: var(--muted); }
 
-    .feature-icon {
-      font-size: 1.8rem;
-      margin-bottom: 12px;
-    }
-
-    .feature-card h3 {
-      font-size: 1rem;
-      font-weight: 700;
-      margin-bottom: 8px;
-    }
-
-    .feature-card p {
-      font-size: .9rem;
-      color: var(--muted);
-    }
-
-    /* ── Install ── */
-    .install-section {
-      background: var(--surface);
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-    }
-
-    .steps {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-      max-width: 580px;
-      margin: 0 auto;
-    }
-
-    .step {
-      display: flex;
-      align-items: flex-start;
-      gap: 16px;
-    }
-
-    .step-num {
-      flex-shrink: 0;
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
-      background: var(--accent);
-      color: #0d0e14;
-      font-weight: 800;
-      font-size: .95rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
+    /* install */
+    .install-section { background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    .steps { display: flex; flex-direction: column; gap: 16px; max-width: 580px; margin: 0 auto; }
+    .step { display: flex; align-items: flex-start; gap: 16px; }
+    .step-num { flex-shrink: 0; width: 36px; height: 36px; border-radius: 50%; background: var(--accent); color: #0d0e14; font-weight: 800; font-size: .95rem; display: flex; align-items: center; justify-content: center; }
     .step p { color: var(--muted); font-size: .95rem; }
     .step p strong { color: var(--text); }
 
-    /* ── Hotkeys ── */
-    .hotkeys {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      max-width: 400px;
-      margin: 0 auto;
-    }
-
-    .hotkey-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 12px 18px;
-    }
-
-    kbd {
-      background: var(--surface2);
-      border: 1px solid var(--border);
-      border-radius: 5px;
-      padding: 4px 10px;
-      font-family: 'Courier New', monospace;
-      font-size: .85rem;
-      color: var(--accent);
-    }
-
+    /* hotkeys */
+    .hotkeys { display: flex; flex-direction: column; gap: 12px; max-width: 400px; margin: 0 auto; }
+    .hotkey-row { display: flex; justify-content: space-between; align-items: center; background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 12px 18px; }
+    kbd { background: var(--surface2); border: 1px solid var(--border); border-radius: 5px; padding: 4px 10px; font-family: 'Courier New', monospace; font-size: .85rem; color: var(--accent); }
     .hotkey-desc { color: var(--muted); font-size: .9rem; }
 
-    /* ── Langs ── */
-    .langs {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      justify-content: center;
-    }
-
-    .lang-tag {
-      background: var(--surface2);
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      padding: 6px 16px;
-      font-size: .85rem;
-      color: var(--muted);
-    }
-
-    /* ── Footer ── */
-    footer {
-      text-align: center;
-      padding: 40px 24px;
-      color: var(--muted);
-      font-size: .85rem;
-      border-top: 1px solid var(--border);
-    }
-
-    footer a { color: var(--accent); }
-
-    /* ── Responsive ── */
-    @media (max-width: 480px) {
-      .btn { padding: 12px 20px; font-size: .9rem; }
-    }
+    footer { text-align: center; padding: 40px 24px; color: var(--muted); font-size: .85rem; border-top: 1px solid var(--border); }
   </style>
 </head>
 <body>
 
-<!-- ── Hero ── -->
 <section class="hero">
   <h1>aion2t.com <span>DPS Meter</span></h1>
-  <p>Free real-time DPS overlay for <strong>Aion 2</strong> — see every party member's damage as it happens.</p>
-
+  <p id="hero-desc">Free real-time DPS overlay for <strong>Aion 2</strong> — see every party member's damage as it happens.</p>
   <div class="badges">
-    <img src="https://img.shields.io/github/v/release/Grachy/aion2t-dps-meter?label=version&color=f0a840&style=flat-square" alt="version" />
+    <img src="https://img.shields.io/badge/version-1.1.8-f0a840?style=flat-square" alt="version" />
     <img src="https://img.shields.io/badge/platform-Windows%2010%2F11-555?style=flat-square" alt="platform" />
-    <img src="https://img.shields.io/github/downloads/Grachy/aion2t-dps-meter/total?color=4caf50&style=flat-square" alt="downloads" />
   </div>
-
   <div class="btn-group">
-    <a class="btn btn-primary" href="aion2t-dps-setup-1.1.8-x64.exe">
-      ⬇ Download v1.1.8
-    </a>
-    <a class="btn btn-secondary" href="https://github.com/Grachy/aion2t-dps-meter">
-      GitHub
-    </a>
-    <a class="btn btn-secondary" href="https://aion2t.com">
-      aion2t.com
-    </a>
+    <a class="btn btn-primary" href="aion2t-dps-setup-1.1.8-x64.exe">⬇ Download v1.1.8</a>
+    <a class="btn btn-secondary" href="https://github.com/Grachy/aion2t-dps-meter">GitHub</a>
+    <a class="btn btn-secondary" href="https://aion2t.com/dps-meter">aion2t.com</a>
   </div>
 </section>
 
-<!-- ── Features ── -->
+<!-- Language selector -->
+<div class="lang-bar">
+  <button class="lang-btn active" onclick="setLang('en')">🇬🇧 English</button>
+  <button class="lang-btn" onclick="setLang('ru')">🇷🇺 Русский</button>
+  <button class="lang-btn" onclick="setLang('de')">🇩🇪 Deutsch</button>
+  <button class="lang-btn" onclick="setLang('fr')">🇫🇷 Français</button>
+  <button class="lang-btn" onclick="setLang('es')">🇪🇸 Español</button>
+  <button class="lang-btn" onclick="setLang('pt')">🇧🇷 Português</button>
+  <button class="lang-btn" onclick="setLang('ja')">🇯🇵 日本語</button>
+  <button class="lang-btn" onclick="setLang('ko')">🇰🇷 한국어</button>
+  <button class="lang-btn" onclick="setLang('zh-hans')">🇨🇳 简体中文</button>
+  <button class="lang-btn" onclick="setLang('zh-hant')">🇹🇼 繁體中文</button>
+</div>
+
+<div class="desc-section">
+  <div class="desc-block active" id="desc-en">
+    <ul>
+      <li><strong>Real-time DPS</strong> — updates every 500 ms for all party members</li>
+      <li><strong>Skill breakdown</strong> — click any player to see stats per skill: icons, hit counts, crit rates and more</li>
+      <li><strong>Buff timeline</strong> — see which buffs were active and how they affected DPS throughout the fight</li>
+      <li><strong>Fight history</strong> — browse past fights, filter by boss or class, compare your performance</li>
+      <li><strong>Party selector</strong> — switch between multiple parties / instances on the fly</li>
+      <li><strong>Boss tracking</strong> — shows current boss name and total damage dealt</li>
+      <li><strong>Auto-detect local player</strong> — your character is highlighted automatically</li>
+      <li><strong>Always-on-top transparent overlay</strong> — resizable, stays over the game</li>
+      <li><strong>Hotkey reset</strong> — <kbd>Ctrl+R</kbd> clears all DPS data</li>
+      <li><strong>10 languages</strong> &amp; auto-update</li>
+    </ul>
+  </div>
+  <div class="desc-block" id="desc-ru">
+    <ul>
+      <li><strong>Урон в реальном времени</strong> — обновление каждые 500 мс для всех членов пати</li>
+      <li><strong>Разбивка по скиллам</strong> — нажми на игрока и увидишь статистику каждого скилла: иконки, удары, криты и многое другое</li>
+      <li><strong>Тайм-лайн баффов</strong> — какие баффы были активны и как влияли на урон в течение боя</li>
+      <li><strong>История боёв</strong> — просматривай прошлые бои, фильтруй по боссу или классу</li>
+      <li><strong>Выбор пати</strong> — переключение между несколькими группами/инстансами на лету</li>
+      <li><strong>Отслеживание боссов</strong> — имя текущего босса и суммарный урон по нему</li>
+      <li><strong>Авто-определение своего персонажа</strong> — твой персонаж подсвечивается автоматически</li>
+      <li><strong>Прозрачный оверлей поверх всего</strong> — изменяемый размер, всегда виден поверх игры</li>
+      <li><strong>Горячая клавиша сброса</strong> — <kbd>Ctrl+R</kbd> сбрасывает все данные ДПС</li>
+      <li><strong>10 языков</strong> и авто-обновление</li>
+    </ul>
+  </div>
+  <div class="desc-block" id="desc-de">
+    <ul>
+      <li><strong>Echtzeit-DPS</strong> — Aktualisierung alle 500 ms für alle Gruppenmitglieder</li>
+      <li><strong>Skill-Aufschlüsselung</strong> — Klicke auf einen Spieler für Statistiken pro Skill: Icons, Treffer, Krit-Rate und mehr</li>
+      <li><strong>Buff-Timeline</strong> — Welche Buffs aktiv waren und wie sie den Schaden beeinflussten</li>
+      <li><strong>Kampfverlauf</strong> — Vergangene Kämpfe durchsuchen, nach Boss oder Klasse filtern</li>
+      <li><strong>Gruppen-Auswahl</strong> — Zwischen mehreren Gruppen/Instanzen wechseln</li>
+      <li><strong>Boss-Tracking</strong> — Aktueller Bossname und Gesamtschaden</li>
+      <li><strong>Automatische Spieler-Erkennung</strong> — Dein Charakter wird automatisch hervorgehoben</li>
+      <li><strong>Transparentes Always-on-Top-Overlay</strong> — Frei skalierbar, immer über dem Spiel</li>
+      <li><strong>Hotkey-Reset</strong> — <kbd>Ctrl+R</kbd> setzt alle DPS-Daten zurück</li>
+      <li><strong>10 Sprachen</strong> &amp; Auto-Update</li>
+    </ul>
+  </div>
+  <div class="desc-block" id="desc-fr">
+    <ul>
+      <li><strong>DPS en temps réel</strong> — mise à jour toutes les 500 ms pour tous les membres du groupe</li>
+      <li><strong>Détail par compétence</strong> — cliquez sur un joueur pour voir les stats par compétence : icônes, coups, taux de crit, etc.</li>
+      <li><strong>Chronologie des buffs</strong> — quels buffs étaient actifs et leur impact sur les DPS</li>
+      <li><strong>Historique des combats</strong> — parcourez les combats passés, filtrez par boss ou classe</li>
+      <li><strong>Sélecteur de groupe</strong> — basculer entre plusieurs groupes/instances à la volée</li>
+      <li><strong>Suivi du boss</strong> — nom du boss actuel et dégâts totaux infligés</li>
+      <li><strong>Détection automatique du personnage</strong> — votre personnage est mis en évidence automatiquement</li>
+      <li><strong>Overlay transparent Always-on-Top</strong> — redimensionnable, toujours visible</li>
+      <li><strong>Raccourci reset</strong> — <kbd>Ctrl+R</kbd> remet à zéro les données DPS</li>
+      <li><strong>10 langues</strong> &amp; mise à jour automatique</li>
+    </ul>
+  </div>
+  <div class="desc-block" id="desc-es">
+    <ul>
+      <li><strong>DPS en tiempo real</strong> — actualización cada 500 ms para todos los miembros del grupo</li>
+      <li><strong>Desglose por habilidades</strong> — haz clic en un jugador para ver estadísticas por habilidad: iconos, golpes, críticos y más</li>
+      <li><strong>Línea de tiempo de buffs</strong> — qué buffs estaban activos y cómo afectaron al DPS</li>
+      <li><strong>Historial de combates</strong> — consulta combates anteriores, filtra por jefe o clase</li>
+      <li><strong>Selector de grupo</strong> — cambia entre varios grupos/instancias al vuelo</li>
+      <li><strong>Seguimiento de jefes</strong> — nombre del jefe actual y daño total infligido</li>
+      <li><strong>Detección automática del jugador</strong> — tu personaje se resalta automáticamente</li>
+      <li><strong>Overlay transparente siempre visible</strong> — redimensionable, siempre encima del juego</li>
+      <li><strong>Atajo de reinicio</strong> — <kbd>Ctrl+R</kbd> borra todos los datos de DPS</li>
+      <li><strong>10 idiomas</strong> &amp; actualización automática</li>
+    </ul>
+  </div>
+  <div class="desc-block" id="desc-pt">
+    <ul>
+      <li><strong>DPS em tempo real</strong> — atualização a cada 500 ms para todos os membros do grupo</li>
+      <li><strong>Detalhamento por habilidade</strong> — clique em um jogador para ver estatísticas por habilidade: ícones, acertos, críticos e mais</li>
+      <li><strong>Linha do tempo de buffs</strong> — quais buffs estavam ativos e como afetaram o DPS</li>
+      <li><strong>Histórico de combates</strong> — veja combates anteriores, filtre por chefe ou classe</li>
+      <li><strong>Seletor de grupo</strong> — alterne entre vários grupos/instâncias</li>
+      <li><strong>Rastreamento de chefe</strong> — nome do chefe atual e dano total causado</li>
+      <li><strong>Detecção automática do jogador</strong> — seu personagem é destacado automaticamente</li>
+      <li><strong>Overlay transparente sempre visível</strong> — redimensionável, sempre sobre o jogo</li>
+      <li><strong>Atalho de reset</strong> — <kbd>Ctrl+R</kbd> limpa todos os dados de DPS</li>
+      <li><strong>10 idiomas</strong> &amp; atualização automática</li>
+    </ul>
+  </div>
+  <div class="desc-block" id="desc-ja">
+    <ul>
+      <li><strong>リアルタイムDPS</strong> — 全メンバーのダメージを500msごとに更新</li>
+      <li><strong>スキル別内訳</strong> — プレイヤーをクリックしてスキルごとの統計を確認：アイコン、ヒット数、クリット率など</li>
+      <li><strong>バフタイムライン</strong> — どのバフが有効で、DPSにどう影響したかを確認</li>
+      <li><strong>戦闘履歴</strong> — 過去の戦闘を閲覧、ボスやクラスでフィルタリング</li>
+      <li><strong>パーティ選択</strong> — 複数のパーティ/インスタンスを切り替え</li>
+      <li><strong>ボストラッキング</strong> — 現在のボス名と合計ダメージを表示</li>
+      <li><strong>自キャラ自動検出</strong> — 自分のキャラクターが自動でハイライト</li>
+      <li><strong>透明常時最前面オーバーレイ</strong> — ゲームの上に常時表示、サイズ変更可能</li>
+      <li><strong>ホットキーリセット</strong> — <kbd>Ctrl+R</kbd>でDPSデータをリセット</li>
+      <li><strong>10言語対応</strong>、自動アップデート</li>
+    </ul>
+  </div>
+  <div class="desc-block" id="desc-ko">
+    <ul>
+      <li><strong>실시간 DPS</strong> — 전체 파티원의 피해량을 500ms마다 업데이트</li>
+      <li><strong>스킬별 분석</strong> — 플레이어 클릭 시 스킬별 통계 확인: 아이콘, 히트 수, 치명타율 등</li>
+      <li><strong>버프 타임라인</strong> — 어떤 버프가 활성화되었고 DPS에 어떤 영향을 미쳤는지 확인</li>
+      <li><strong>전투 기록</strong> — 과거 전투 열람, 보스 또는 직업으로 필터링</li>
+      <li><strong>파티 선택</strong> — 여러 파티/인스턴스 간 전환</li>
+      <li><strong>보스 추적</strong> — 현재 보스 이름과 총 피해량 표시</li>
+      <li><strong>내 캐릭터 자동 감지</strong> — 내 캐릭터가 자동으로 강조 표시됨</li>
+      <li><strong>투명 항상 위 오버레이</strong> — 게임 위에 항상 표시, 크기 조절 가능</li>
+      <li><strong>핫키 초기화</strong> — <kbd>Ctrl+R</kbd>로 DPS 데이터 초기화</li>
+      <li><strong>10개 언어 지원</strong>, 자동 업데이트</li>
+    </ul>
+  </div>
+  <div class="desc-block" id="desc-zh-hans">
+    <ul>
+      <li><strong>实时 DPS</strong> — 每 500ms 更新全队伤害数据</li>
+      <li><strong>技能详情</strong> — 点击玩家查看每个技能的统计：图标、命中次数、暴击率等</li>
+      <li><strong>增益时间轴</strong> — 查看哪些增益处于激活状态以及对 DPS 的影响</li>
+      <li><strong>战斗历史</strong> — 浏览过去的战斗记录，按 Boss 或职业筛选</li>
+      <li><strong>队伍选择</strong> — 快速切换多个队伍/副本</li>
+      <li><strong>Boss 追踪</strong> — 显示当前 Boss 名称和累计伤害</li>
+      <li><strong>自动识别本地玩家</strong> — 自动高亮显示自己的角色</li>
+      <li><strong>透明置顶覆盖层</strong> — 始终显示在游戏上方，可自由调整大小</li>
+      <li><strong>快捷键重置</strong> — <kbd>Ctrl+R</kbd> 清除所有 DPS 数据</li>
+      <li><strong>10 种语言</strong>，自动更新</li>
+    </ul>
+  </div>
+  <div class="desc-block" id="desc-zh-hant">
+    <ul>
+      <li><strong>即時 DPS</strong> — 每 500ms 更新全隊傷害數據</li>
+      <li><strong>技能詳情</strong> — 點擊玩家查看每個技能的統計：圖示、命中次數、暴擊率等</li>
+      <li><strong>增益時間軸</strong> — 查看哪些增益處於激活狀態以及對 DPS 的影響</li>
+      <li><strong>戰鬥歷史</strong> — 瀏覽過去的戰鬥記錄，依 Boss 或職業篩選</li>
+      <li><strong>隊伍選擇</strong> — 快速切換多個隊伍/副本</li>
+      <li><strong>Boss 追蹤</strong> — 顯示當前 Boss 名稱和累計傷害</li>
+      <li><strong>自動辨識本地玩家</strong> — 自動高亮顯示自己的角色</li>
+      <li><strong>透明置頂覆蓋層</strong> — 始終顯示在遊戲上方，可自由調整大小</li>
+      <li><strong>快捷鍵重置</strong> — <kbd>Ctrl+R</kbd> 清除所有 DPS 資料</li>
+      <li><strong>10 種語言</strong>，自動更新</li>
+    </ul>
+  </div>
+</div>
+
+<!-- Screenshots -->
 <section class="section">
-  <h2 class="section-title">Features</h2>
-  <div class="features-grid">
-    <div class="feature-card">
-      <div class="feature-icon">⚡</div>
-      <h3>Real-time DPS</h3>
-      <p>Updates every 500 ms. See all party members' damage output as it happens, live during fights.</p>
+  <h2 class="section-title">Screenshots</h2>
+  <div class="screenshots">
+    <div class="screenshot">
+      <img src="img/screen1.jpg" alt="Skill breakdown" loading="lazy" />
+      <div class="screenshot-label">Skill breakdown with detailed stats</div>
     </div>
-    <div class="feature-card">
-      <div class="feature-icon">📊</div>
-      <h3>Skill Breakdown</h3>
-      <p>Click any player to see a detailed breakdown by skill — icons, hit counts, and a damage timeline chart.</p>
+    <div class="screenshot">
+      <img src="img/screen2.jpg" alt="Buff timeline" loading="lazy" />
+      <div class="screenshot-label">Buff timeline and fight summary</div>
     </div>
-    <div class="feature-card">
-      <div class="feature-icon">🎯</div>
-      <h3>Boss Tracking</h3>
-      <p>Automatically detects the current boss and shows the total damage dealt to it by each player.</p>
-    </div>
-    <div class="feature-card">
-      <div class="feature-icon">👥</div>
-      <h3>Party Selector</h3>
-      <p>Running multiple instances or parties? Switch between them on the fly without restarting the app.</p>
-    </div>
-    <div class="feature-card">
-      <div class="feature-icon">🪟</div>
-      <h3>Transparent Overlay</h3>
-      <p>Always-on-top transparent window. Resize it by dragging any edge. Stays out of the way while you play.</p>
-    </div>
-    <div class="feature-card">
-      <div class="feature-icon">🌐</div>
-      <h3>10 Languages</h3>
-      <p>EN · RU · DE · FR · ES · PT · 日本語 · 한국어 · 简中 · 繁中 — switch in the settings panel.</p>
-    </div>
-    <div class="feature-card">
-      <div class="feature-icon">🔍</div>
-      <h3>Auto-detect Local Player</h3>
-      <p>Your own character is highlighted automatically. No manual setup required.</p>
-    </div>
-    <div class="feature-card">
-      <div class="feature-icon">🔄</div>
-      <h3>Auto-updates</h3>
-      <p>The app checks for new versions and notifies you when one is available.</p>
+    <div class="screenshot">
+      <img src="img/screen3.jpg" alt="Fight history" loading="lazy" />
+      <div class="screenshot-label">Fight history — all past bosses</div>
     </div>
   </div>
 </section>
 
-<!-- ── Install ── -->
+<!-- Install -->
 <section class="install-section">
   <div class="section">
     <h2 class="section-title">Installation</h2>
     <div class="steps">
       <div class="step">
         <div class="step-num">1</div>
-        <div>
-          <p><strong><a href="aion2t-dps-setup-1.1.8-x64.exe">Download</a></strong> the installer — <code>aion2t-dps-setup-1.1.8-x64.exe</code></p>
-        </div>
+        <div><p><strong><a href="aion2t-dps-setup-1.1.8-x64.exe">Download</a></strong> the installer — <code>aion2t-dps-setup-1.1.8-x64.exe</code></p></div>
       </div>
       <div class="step">
         <div class="step-num">2</div>
-        <div>
-          <p><strong>Run</strong> the installer. If Windows SmartScreen appears, click <strong>More info → Run anyway</strong>.</p>
-        </div>
+        <div><p><strong>Run</strong> the installer. If Windows SmartScreen appears — click <strong>More info → Run anyway</strong>.</p></div>
       </div>
       <div class="step">
         <div class="step-num">3</div>
-        <div>
-          <p><strong>Launch</strong> <em>aion2t.com DPS</em> from the Start menu or desktop shortcut.</p>
-        </div>
+        <div><p><strong>Launch</strong> <em>aion2t.com DPS</em> from the Start menu or desktop shortcut.</p></div>
       </div>
       <div class="step">
         <div class="step-num">4</div>
-        <div>
-          <p><strong>Start Aion 2</strong> and enter a dungeon — the overlay populates automatically as combat begins.</p>
-        </div>
+        <div><p><strong>Start Aion 2</strong> and enter a dungeon — the overlay populates automatically as combat begins.</p></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ── Hotkeys ── -->
+<!-- Hotkeys -->
 <section class="section">
   <h2 class="section-title">Hotkeys</h2>
   <div class="hotkeys">
-    <div class="hotkey-row">
-      <kbd>Ctrl+R</kbd>
-      <span class="hotkey-desc">Reset all DPS data</span>
-    </div>
-    <div class="hotkey-row">
-      <kbd>Drag edge</kbd>
-      <span class="hotkey-desc">Resize overlay window</span>
-    </div>
+    <div class="hotkey-row"><kbd>Ctrl+R</kbd><span class="hotkey-desc">Reset all DPS data</span></div>
+    <div class="hotkey-row"><kbd>Drag edge</kbd><span class="hotkey-desc">Resize overlay window</span></div>
   </div>
 </section>
 
-<!-- ── Languages ── -->
-<section class="section" style="padding-top:0">
-  <h2 class="section-title">Languages</h2>
-  <div class="langs">
-    <span class="lang-tag">English</span>
-    <span class="lang-tag">Русский</span>
-    <span class="lang-tag">Deutsch</span>
-    <span class="lang-tag">Français</span>
-    <span class="lang-tag">Español</span>
-    <span class="lang-tag">Português</span>
-    <span class="lang-tag">日本語</span>
-    <span class="lang-tag">한국어</span>
-    <span class="lang-tag">简体中文</span>
-    <span class="lang-tag">繁體中文</span>
-  </div>
-</section>
-
-<!-- ── Footer ── -->
 <footer>
-  <p>Made with ♥ by <a href="https://aion2t.com">aion2t.com</a> &nbsp;·&nbsp;
-    <a href="https://github.com/Grachy/aion2t-dps-meter/releases/latest">Download</a> &nbsp;·&nbsp;
+  <p>Made with ♥ by <a href="https://aion2t.com/dps-meter">aion2t.com/dps-meter</a> &nbsp;·&nbsp;
+    <a href="aion2t-dps-setup-1.1.8-x64.exe">Download</a> &nbsp;·&nbsp;
+    <a href="https://github.com/Grachy/aion2t-dps-meter">GitHub</a> &nbsp;·&nbsp;
     <a href="https://github.com/Grachy/aion2t-dps-meter/issues">Report a Bug</a>
   </p>
 </footer>
 
+<script>
+  const heroDescs = {
+    en: 'Free real-time DPS overlay for <strong>Aion 2</strong> — see every party member\'s damage as it happens.',
+    ru: 'Бесплатный оверлей реального времени для <strong>Aion 2</strong> — урон всей пати прямо во время боя.',
+    de: 'Kostenloses Echtzeit-DPS-Overlay für <strong>Aion 2</strong> — Schaden aller Gruppenmitglieder in Echtzeit.',
+    fr: 'Overlay DPS gratuit en temps réel pour <strong>Aion 2</strong> — les dégâts de tout le groupe en direct.',
+    es: 'Overlay de DPS gratuito en tiempo real para <strong>Aion 2</strong> — el daño de todo el grupo en vivo.',
+    pt: 'Overlay de DPS gratuito em tempo real para <strong>Aion 2</strong> — o dano de todo o grupo ao vivo.',
+    ja: '<strong>Aion 2</strong>向け無料リアルタイムDPSオーバーレイ — 全パーティメンバーのダメージをリアルタイムで確認。',
+    ko: '<strong>Aion 2</strong>를 위한 무료 실시간 DPS 오버레이 — 모든 파티원의 피해량을 실시간으로 확인.',
+    'zh-hans': '免费的 <strong>Aion 2</strong> 实时 DPS 覆盖层 — 实时查看全队每位成员的伤害输出。',
+    'zh-hant': '免費的 <strong>Aion 2</strong> 即時 DPS 覆蓋層 — 即時查看全隊每位成員的傷害輸出。',
+  };
+
+  function setLang(lang) {
+    document.querySelectorAll('.desc-block').forEach(el => el.classList.remove('active'));
+    document.querySelectorAll('.lang-btn').forEach(el => el.classList.remove('active'));
+    const block = document.getElementById('desc-' + lang);
+    if (block) block.classList.add('active');
+    event.currentTarget.classList.add('active');
+    const heroEl = document.getElementById('hero-desc');
+    if (heroDescs[lang]) heroEl.innerHTML = heroDescs[lang];
+  }
+</script>
 </body>
 </html>
