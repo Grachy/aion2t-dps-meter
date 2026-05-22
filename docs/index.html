@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>aion2t.com DPS Meter — Real-time DPS overlay for Aion 2</title>
+  <meta name="description" content="Free real-time DPS overlay for Aion 2 (PC). Shows damage for all party members with skill breakdown, boss tracking, and 10 languages." />
+  <meta property="og:title" content="aion2t.com DPS Meter" />
+  <meta property="og:description" content="Free real-time DPS overlay for Aion 2 (PC)" />
+  <meta property="og:image" content="img/logo.png" />
+  <link rel="icon" href="img/logo.png" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0d0e14;
+      --surface: #161820;
+      --surface2: #1e2030;
+      --accent: #f0a840;
+      --accent2: #e07820;
+      --text: #e4e6f0;
+      --muted: #8890a8;
+      --border: #2a2d3e;
+      --radius: 12px;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* ── Hero ── */
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 80px 24px 60px;
+      background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(240,168,64,.12) 0%, transparent 70%);
+    }
+
+    .hero-logo {
+      width: 100px;
+      height: 100px;
+      border-radius: 20px;
+      margin-bottom: 28px;
+      filter: drop-shadow(0 0 24px rgba(240,168,64,.4));
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 800;
+      letter-spacing: -.02em;
+      margin-bottom: 16px;
+    }
+
+    .hero h1 span { color: var(--accent); }
+
+    .hero p {
+      font-size: 1.15rem;
+      color: var(--muted);
+      max-width: 540px;
+      margin-bottom: 36px;
+    }
+
+    .badges {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: 36px;
+    }
+
+    .badges img { height: 22px; border-radius: 4px; }
+
+    .btn-group {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 28px;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: opacity .15s, transform .15s;
+    }
+
+    .btn:hover { opacity: .88; transform: translateY(-1px); text-decoration: none; }
+    .btn-primary { background: linear-gradient(135deg, var(--accent), var(--accent2)); color: #0d0e14; }
+    .btn-secondary { background: var(--surface2); color: var(--text); border: 1px solid var(--border); }
+
+    /* ── Features ── */
+    .section {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 60px 24px;
+    }
+
+    .section-title {
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin-bottom: 36px;
+      text-align: center;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 16px;
+    }
+
+    .feature-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      transition: border-color .2s;
+    }
+
+    .feature-card:hover { border-color: var(--accent); }
+
+    .feature-icon {
+      font-size: 1.8rem;
+      margin-bottom: 12px;
+    }
+
+    .feature-card h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .feature-card p {
+      font-size: .9rem;
+      color: var(--muted);
+    }
+
+    /* ── Install ── */
+    .install-section {
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .steps {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      max-width: 580px;
+      margin: 0 auto;
+    }
+
+    .step {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+    }
+
+    .step-num {
+      flex-shrink: 0;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--accent);
+      color: #0d0e14;
+      font-weight: 800;
+      font-size: .95rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .step p { color: var(--muted); font-size: .95rem; }
+    .step p strong { color: var(--text); }
+
+    /* ── Hotkeys ── */
+    .hotkeys {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      max-width: 400px;
+      margin: 0 auto;
+    }
+
+    .hotkey-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 12px 18px;
+    }
+
+    kbd {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 5px;
+      padding: 4px 10px;
+      font-family: 'Courier New', monospace;
+      font-size: .85rem;
+      color: var(--accent);
+    }
+
+    .hotkey-desc { color: var(--muted); font-size: .9rem; }
+
+    /* ── Langs ── */
+    .langs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+    }
+
+    .lang-tag {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 6px 16px;
+      font-size: .85rem;
+      color: var(--muted);
+    }
+
+    /* ── Footer ── */
+    footer {
+      text-align: center;
+      padding: 40px 24px;
+      color: var(--muted);
+      font-size: .85rem;
+      border-top: 1px solid var(--border);
+    }
+
+    footer a { color: var(--accent); }
+
+    /* ── Responsive ── */
+    @media (max-width: 480px) {
+      .btn { padding: 12px 20px; font-size: .9rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── Hero ── -->
+<section class="hero">
+  <img class="hero-logo" src="img/logo.png" alt="aion2t.com DPS Meter logo" />
+  <h1>aion2t.com <span>DPS Meter</span></h1>
+  <p>Free real-time DPS overlay for <strong>Aion 2</strong> — see every party member's damage as it happens.</p>
+
+  <div class="badges">
+    <img src="https://img.shields.io/github/v/release/Grachy/aion2t-dps-meter?label=version&color=f0a840&style=flat-square" alt="version" />
+    <img src="https://img.shields.io/badge/platform-Windows%2010%2F11-555?style=flat-square" alt="platform" />
+    <img src="https://img.shields.io/github/downloads/Grachy/aion2t-dps-meter/total?color=4caf50&style=flat-square" alt="downloads" />
+  </div>
+
+  <div class="btn-group">
+    <a class="btn btn-primary" href="https://github.com/Grachy/aion2t-dps-meter/releases/latest">
+      ⬇ Download Latest
+    </a>
+    <a class="btn btn-secondary" href="https://github.com/Grachy/aion2t-dps-meter">
+      GitHub
+    </a>
+    <a class="btn btn-secondary" href="https://aion2t.com">
+      aion2t.com
+    </a>
+  </div>
+</section>
+
+<!-- ── Features ── -->
+<section class="section">
+  <h2 class="section-title">Features</h2>
+  <div class="features-grid">
+    <div class="feature-card">
+      <div class="feature-icon">⚡</div>
+      <h3>Real-time DPS</h3>
+      <p>Updates every 500 ms. See all party members' damage output as it happens, live during fights.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">📊</div>
+      <h3>Skill Breakdown</h3>
+      <p>Click any player to see a detailed breakdown by skill — icons, hit counts, and a damage timeline chart.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">🎯</div>
+      <h3>Boss Tracking</h3>
+      <p>Automatically detects the current boss and shows the total damage dealt to it by each player.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">👥</div>
+      <h3>Party Selector</h3>
+      <p>Running multiple instances or parties? Switch between them on the fly without restarting the app.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">🪟</div>
+      <h3>Transparent Overlay</h3>
+      <p>Always-on-top transparent window. Resize it by dragging any edge. Stays out of the way while you play.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">🌐</div>
+      <h3>10 Languages</h3>
+      <p>EN · RU · DE · FR · ES · PT · 日本語 · 한국어 · 简中 · 繁中 — switch in the settings panel.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">🔍</div>
+      <h3>Auto-detect Local Player</h3>
+      <p>Your own character is highlighted automatically. No manual setup required.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">🔄</div>
+      <h3>Auto-updates</h3>
+      <p>The app checks for new versions and notifies you when one is available.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── Install ── -->
+<section class="install-section">
+  <div class="section">
+    <h2 class="section-title">Installation</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div>
+          <p><strong>Download</strong> the installer from the <a href="https://github.com/Grachy/aion2t-dps-meter/releases/latest">Releases page</a>.<br>File: <code>aion2t.com DPS_x.x.x_x64-setup.exe</code></p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div>
+          <p><strong>Run</strong> the installer. If Windows SmartScreen appears, click <strong>More info → Run anyway</strong>.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div>
+          <p><strong>Launch</strong> <em>aion2t.com DPS</em> from the Start menu or desktop shortcut.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div>
+          <p><strong>Start Aion 2</strong> and enter a dungeon — the overlay populates automatically as combat begins.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Hotkeys ── -->
+<section class="section">
+  <h2 class="section-title">Hotkeys</h2>
+  <div class="hotkeys">
+    <div class="hotkey-row">
+      <kbd>Ctrl+R</kbd>
+      <span class="hotkey-desc">Reset all DPS data</span>
+    </div>
+    <div class="hotkey-row">
+      <kbd>Drag edge</kbd>
+      <span class="hotkey-desc">Resize overlay window</span>
+    </div>
+  </div>
+</section>
+
+<!-- ── Languages ── -->
+<section class="section" style="padding-top:0">
+  <h2 class="section-title">Languages</h2>
+  <div class="langs">
+    <span class="lang-tag">English</span>
+    <span class="lang-tag">Русский</span>
+    <span class="lang-tag">Deutsch</span>
+    <span class="lang-tag">Français</span>
+    <span class="lang-tag">Español</span>
+    <span class="lang-tag">Português</span>
+    <span class="lang-tag">日本語</span>
+    <span class="lang-tag">한국어</span>
+    <span class="lang-tag">简体中文</span>
+    <span class="lang-tag">繁體中文</span>
+  </div>
+</section>
+
+<!-- ── Footer ── -->
+<footer>
+  <p>Made with ♥ by <a href="https://aion2t.com">aion2t.com</a> &nbsp;·&nbsp;
+    <a href="https://github.com/Grachy/aion2t-dps-meter/releases/latest">Download</a> &nbsp;·&nbsp;
+    <a href="https://github.com/Grachy/aion2t-dps-meter/issues">Report a Bug</a>
+  </p>
+</footer>
+
+</body>
+</html>
