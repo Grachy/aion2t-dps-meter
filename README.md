@@ -2,12 +2,11 @@
   <h1>aion2t.com DPS Meter</h1>
   <p>Real-time DPS overlay for <strong>Aion 2</strong> (PC client)</p>
 
-  [![Version](https://img.shields.io/github/v/release/Grachy/aion2t-dps-meter?label=version&color=blue)](https://github.com/Grachy/aion2t-dps-meter/releases/latest)
-  [![Platform](https://img.shields.io/badge/platform-Windows%2010%2F11-lightgrey)](https://github.com/Grachy/aion2t-dps-meter/releases/latest)
-  [![Download](https://img.shields.io/github/downloads/Grachy/aion2t-dps-meter/total?color=green)](https://github.com/Grachy/aion2t-dps-meter/releases/latest)
+  [![Version](https://img.shields.io/badge/version-1.1.8-blue)](#download)
+  [![Platform](https://img.shields.io/badge/platform-Windows%2010%2F11%20x64-lightgrey)](#download)
   [![Website](https://img.shields.io/badge/website-aion2t.com-orange)](https://aion2t.com)
 
-  [**Download Latest**](https://github.com/Grachy/aion2t-dps-meter/releases/latest) · [Website](https://aion2t.com) · [Report a Bug](https://github.com/Grachy/aion2t-dps-meter/issues)
+  [**⬇ Download v1.1.8**](https://grachy.github.io/aion2t-dps-meter/aion2t-dps-setup-1.1.8-x64.exe) · [Website](https://aion2t.com) · [Report a Bug](https://github.com/Grachy/aion2t-dps-meter/issues)
 </div>
 
 ---
@@ -17,6 +16,14 @@
 A lightweight transparent overlay that reads Aion 2 network packets and shows **real-time DPS** for every member of your party — no game files are modified, nothing is injected.
 
 > Works with the **PC (Windows) client** of Aion 2.
+
+---
+
+## Screenshots
+
+<!-- SCREENSHOTS START -->
+*Screenshots coming soon*
+<!-- SCREENSHOTS END -->
 
 ---
 
@@ -35,19 +42,14 @@ A lightweight transparent overlay that reads Aion 2 network packets and shows **
 
 ---
 
-## Screenshots
+## Download & Install <a name="download"></a>
 
-> *Screenshots coming soon — add yours in the [Issues](https://github.com/Grachy/aion2t-dps-meter/issues) section!*
+**[⬇ Download aion2t-dps-setup-1.1.8-x64.exe](https://grachy.github.io/aion2t-dps-meter/aion2t-dps-setup-1.1.8-x64.exe)**
 
----
-
-## Download & Install
-
-1. Go to the [**Releases**](https://github.com/Grachy/aion2t-dps-meter/releases/latest) page
-2. Download `aion2t.com DPS_x.x.x_x64-setup.exe`
-3. Run the installer (Windows may show a SmartScreen warning — click **More info → Run anyway**)
-4. Launch **aion2t.com DPS** from the Start menu or desktop shortcut
-5. Start Aion 2 and enter a dungeon — the overlay will populate automatically
+1. Download the installer above
+2. Run it — if Windows SmartScreen appears, click **More info → Run anyway**
+3. Launch **aion2t.com DPS** from the Start menu or desktop shortcut
+4. Start Aion 2 and enter a dungeon — the overlay populates automatically
 
 ### System Requirements
 
@@ -65,7 +67,6 @@ A lightweight transparent overlay that reads Aion 2 network packets and shows **
 |--------|--------|
 | `Ctrl+R` | Reset all DPS data |
 | Drag window edge | Resize overlay |
-| Right-click title bar | *(reserved for future menu)* |
 
 ---
 
@@ -81,7 +82,7 @@ A: Make sure Aion 2 is running on the same PC. Enter a combat zone — data appe
 A: Press `Ctrl+R` to reset the combat data and start fresh for the new fight.
 
 **Q: Windows SmartScreen blocks the installer.**  
-A: Click **More info** → **Run anyway**. The app is not signed with a paid certificate yet, which triggers this warning.
+A: Click **More info → Run anyway**. The app is not signed with a paid certificate yet, which triggers this warning.
 
 **Q: I want to change the language.**  
 A: Open the settings panel (gear icon in the overlay) and select your language from the list.
