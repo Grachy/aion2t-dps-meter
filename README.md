@@ -1,4 +1,5 @@
 <div align="center">
+  <img src="docs/img/icon.png" alt="DPS Meter" width="100" />
   <h1>aion2t.com DPS Meter</h1>
   <p>Real-time DPS overlay for <strong>Aion 2</strong> (PC client)</p>
 
