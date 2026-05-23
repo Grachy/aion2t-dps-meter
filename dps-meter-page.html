@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO — меняй под каждый язык через JS или серверный рендеринг -->
+  <title>DPS Meter — aion2t.com</title>
+  <meta name="description" content="Бесплатный оверлей DPS для Aion 2 (PC). Реальный урон всей пати, разбивка по скиллам, история боёв." />
+
+  <!--
+  ═══════════════════════════════════════════════════════════════
+  ИНСТРУКЦИЯ ДЛЯ ВЕРСТАЛЬЩИКА
+  ───────────────────────────────────────────────────────────────
+  1. Скриншоты (папка /img/ или CDN):
+       screen1.jpg — разбивка по скиллам
+       screen2.jpg — тайм-лайн баффов
+       screen3.jpg — история боёв
+     Замени пути src="img/screen*.jpg" на актуальные.
+
+  2. Ссылка на скачивание:
+     DOWNLOAD_URL = прямая ссылка на .exe (см. ниже).
+     Сейчас: https://grachy.github.io/aion2t-dps-meter/aion2t-dps-setup-1.1.8-x64.exe
+     При новой версии — обновить версию в тексте кнопок и href.
+
+  3. Если сайт использует свой CSS/дизайн-систему —
+     секцию <style> можно выбросить, классы оставить как семантику.
+
+  4. Переводы лежат в объекте `i18n` в конце файла.
+     Добавить язык = добавить ключ в i18n и кнопку в .lang-bar.
+  ═══════════════════════════════════════════════════════════════
+  -->
+
+  <style>
+    /* ── Reset & tokens ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg:       #0d0e14;
+      --surface:  #161820;
+      --surface2: #1e2030;
+      --accent:   #f0a840;
+      --accent2:  #e07820;
+      --text:     #e4e6f0;
+      --muted:    #8890a8;
+      --border:   #2a2d3e;
+      --radius:   12px;
+      --max:      1080px;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    img { display: block; max-width: 100%; }
+
+    /* ── Layout helpers ── */
+    .wrap { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
+    .section { padding: 64px 0; }
+    .section--alt { background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    .section-title { font-size: clamp(1.4rem, 3vw, 1.8rem); font-weight: 700; margin-bottom: 36px; text-align: center; }
+
+    /* ── Lang bar ── */
+    .lang-bar { display: flex; justify-content: flex-end; padding: 12px 24px; gap: 8px; border-bottom: 1px solid var(--border); }
+    .lang-btn { background: none; border: 1px solid var(--border); border-radius: 20px; padding: 4px 14px; font-size: .85rem; color: var(--muted); cursor: pointer; transition: all .15s; }
+    .lang-btn:hover, .lang-btn.active { background: var(--accent); color: #0d0e14; border-color: var(--accent); font-weight: 700; }
+
+    /* ── Hero ── */
+    .hero {
+      text-align: center;
+      padding: 80px 24px 64px;
+      background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(240,168,64,.13) 0%, transparent 70%);
+    }
+    .hero h1 { font-size: clamp(2rem, 5vw, 3rem); font-weight: 800; letter-spacing: -.02em; margin-bottom: 16px; }
+    .hero h1 em { color: var(--accent); font-style: normal; }
+    .hero p { font-size: 1.1rem; color: var(--muted); max-width: 560px; margin: 0 auto 36px; }
+    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 14px 30px; border-radius: 8px; font-size: 1rem; font-weight: 700; cursor: pointer; transition: opacity .15s, transform .15s; text-decoration: none !important; }
+    .btn:hover { opacity: .88; transform: translateY(-1px); }
+    .btn-dl  { background: linear-gradient(135deg, var(--accent), var(--accent2)); color: #0d0e14; }
+    .btn-sec { background: var(--surface2); color: var(--text); border: 1px solid var(--border); margin-left: 10px; }
+    .hero-note { margin-top: 18px; font-size: .82rem; color: var(--muted); }
+
+    /* ── Features ── */
+    .features { display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 16px; }
+    .feat { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; transition: border-color .2s; }
+    .feat:hover { border-color: var(--accent); }
+    .feat-icon { font-size: 1.8rem; margin-bottom: 12px; }
+    .feat h3 { font-size: 1rem; font-weight: 700; margin-bottom: 6px; }
+    .feat p  { font-size: .9rem; color: var(--muted); }
+
+    /* ── Screenshots ── */
+    .shots { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 16px; }
+    .shot { border-radius: var(--radius); overflow: hidden; border: 1px solid var(--border); transition: border-color .2s; cursor: zoom-in; }
+    .shot:hover { border-color: var(--accent); }
+    .shot img { width: 100%; aspect-ratio: 16/9; object-fit: cover; }
+    .shot-label { padding: 10px 14px; font-size: .88rem; color: var(--muted); background: var(--surface); }
+
+    /* ── Lightbox ── */
+    #lb { display: none; position: fixed; inset: 0; background: rgba(0,0,0,.85); z-index: 999; align-items: center; justify-content: center; cursor: zoom-out; }
+    #lb.open { display: flex; }
+    #lb img { max-width: 92vw; max-height: 90vh; border-radius: 8px; box-shadow: 0 0 60px rgba(0,0,0,.8); }
+
+    /* ── Install steps ── */
+    .steps { display: flex; flex-direction: column; gap: 18px; max-width: 600px; margin: 0 auto; }
+    .step { display: flex; gap: 18px; align-items: flex-start; }
+    .step-n { flex-shrink: 0; width: 38px; height: 38px; border-radius: 50%; background: var(--accent); color: #0d0e14; font-weight: 800; display: flex; align-items: center; justify-content: center; }
+    .step-body { font-size: .95rem; color: var(--muted); }
+    .step-body strong { color: var(--text); }
+
+    /* ── Bugs ── */
+    .bug-cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; }
+    .bug-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; display: flex; flex-direction: column; gap: 10px; transition: border-color .2s; }
+    .bug-card:hover { border-color: var(--accent); }
+    .bug-card-icon { font-size: 1.6rem; }
+    .bug-card h3 { font-size: 1rem; font-weight: 700; }
+    .bug-card p  { font-size: .88rem; color: var(--muted); flex: 1; }
+    .bug-card a  { display: inline-block; margin-top: 6px; font-size: .9rem; font-weight: 600; }
+
+    /* ── Responsive ── */
+    @media (max-width: 480px) {
+      .btn { padding: 12px 20px; font-size: .9rem; }
+      .btn-sec { margin-left: 0; margin-top: 10px; }
+      .hero { padding: 60px 16px 48px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── Lightbox ── -->
+<div id="lb" onclick="closeLb()"><img id="lb-img" src="" alt="" /></div>
+
+<!-- ── Language bar ── -->
+<div class="lang-bar">
+  <button class="lang-btn active" onclick="setLang('ru')">🇷🇺 RU</button>
+  <button class="lang-btn"        onclick="setLang('en')">🇬🇧 EN</button>
+  <button class="lang-btn"        onclick="setLang('ko')">🇰🇷 KO</button>
+</div>
+
+<!-- ══════════════════════════════════════════════
+     HERO
+══════════════════════════════════════════════ -->
+<section class="hero">
+  <h1>aion2t.com <em>DPS Meter</em></h1>
+  <p class="i18n" data-key="hero.subtitle"></p>
+  <div>
+    <a class="btn btn-dl" href="https://grachy.github.io/aion2t-dps-meter/aion2t-dps-setup-1.1.8-x64.exe">
+      ⬇ <span class="i18n" data-key="hero.download"></span>
+    </a>
+    <a class="btn btn-sec" href="https://github.com/Grachy/aion2t-dps-meter">GitHub</a>
+  </div>
+  <p class="hero-note i18n" data-key="hero.note"></p>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     FEATURES
+══════════════════════════════════════════════ -->
+<section class="section wrap">
+  <h2 class="section-title i18n" data-key="feat.title"></h2>
+  <div class="features">
+
+    <div class="feat">
+      <div class="feat-icon">⚡</div>
+      <h3 class="i18n" data-key="feat.dps.h"></h3>
+      <p  class="i18n" data-key="feat.dps.p"></p>
+    </div>
+
+    <div class="feat">
+      <div class="feat-icon">📊</div>
+      <h3 class="i18n" data-key="feat.skills.h"></h3>
+      <p  class="i18n" data-key="feat.skills.p"></p>
+    </div>
+
+    <div class="feat">
+      <div class="feat-icon">⏱</div>
+      <h3 class="i18n" data-key="feat.buffs.h"></h3>
+      <p  class="i18n" data-key="feat.buffs.p"></p>
+    </div>
+
+    <div class="feat">
+      <div class="feat-icon">📋</div>
+      <h3 class="i18n" data-key="feat.history.h"></h3>
+      <p  class="i18n" data-key="feat.history.p"></p>
+    </div>
+
+    <div class="feat">
+      <div class="feat-icon">🎯</div>
+      <h3 class="i18n" data-key="feat.boss.h"></h3>
+      <p  class="i18n" data-key="feat.boss.p"></p>
+    </div>
+
+    <div class="feat">
+      <div class="feat-icon">🌐</div>
+      <h3 class="i18n" data-key="feat.lang.h"></h3>
+      <p  class="i18n" data-key="feat.lang.p"></p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     SCREENSHOTS
+══════════════════════════════════════════════ -->
+<section class="section section--alt">
+  <div class="wrap">
+    <h2 class="section-title i18n" data-key="shots.title"></h2>
+    <div class="shots">
+
+      <div class="shot" onclick="openLb('img/screen1.jpg')">
+        <img src="img/screen1.jpg" alt="Skill breakdown" loading="lazy" />
+        <div class="shot-label i18n" data-key="shots.s1"></div>
+      </div>
+
+      <div class="shot" onclick="openLb('img/screen2.jpg')">
+        <img src="img/screen2.jpg" alt="Buff timeline" loading="lazy" />
+        <div class="shot-label i18n" data-key="shots.s2"></div>
+      </div>
+
+      <div class="shot" onclick="openLb('img/screen3.jpg')">
+        <img src="img/screen3.jpg" alt="Fight history" loading="lazy" />
+        <div class="shot-label i18n" data-key="shots.s3"></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     INSTALLATION
+══════════════════════════════════════════════ -->
+<section class="section wrap">
+  <h2 class="section-title i18n" data-key="install.title"></h2>
+  <div class="steps">
+    <div class="step">
+      <div class="step-n">1</div>
+      <div class="step-body i18n" data-key="install.s1"></div>
+    </div>
+    <div class="step">
+      <div class="step-n">2</div>
+      <div class="step-body i18n" data-key="install.s2"></div>
+    </div>
+    <div class="step">
+      <div class="step-n">3</div>
+      <div class="step-body i18n" data-key="install.s3"></div>
+    </div>
+    <div class="step">
+      <div class="step-n">4</div>
+      <div class="step-body i18n" data-key="install.s4"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     BUG REPORT
+══════════════════════════════════════════════ -->
+<section class="section section--alt">
+  <div class="wrap">
+    <h2 class="section-title i18n" data-key="bugs.title"></h2>
+    <p style="text-align:center;color:var(--muted);margin-bottom:32px;max-width:520px;margin-left:auto;margin-right:auto" class="i18n" data-key="bugs.subtitle"></p>
+    <div class="bug-cards">
+
+      <div class="bug-card">
+        <div class="bug-card-icon">🐙</div>
+        <h3>GitHub Issues</h3>
+        <p class="i18n" data-key="bugs.github.p"></p>
+        <a href="https://github.com/Grachy/aion2t-dps-meter/issues/new" target="_blank" rel="noopener">
+          <span class="i18n" data-key="bugs.open"></span> →
+        </a>
+      </div>
+
+      <div class="bug-card">
+        <div class="bug-card-icon">💬</div>
+        <h3>Discord</h3>
+        <p class="i18n" data-key="bugs.discord.p"></p>
+        <a href="https://discord.gg/P4qDQDSder" target="_blank" rel="noopener">
+          <span class="i18n" data-key="bugs.open"></span> →
+        </a>
+      </div>
+
+      <div class="bug-card">
+        <div class="bug-card-icon">✉️</div>
+        <h3 class="i18n" data-key="bugs.contact.h"></h3>
+        <p class="i18n" data-key="bugs.contact.p"></p>
+        <a href="https://aion2t.com/contact">
+          <span class="i18n" data-key="bugs.open"></span> →
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     I18N DATA
+══════════════════════════════════════════════ -->
+<script>
+const i18n = {
+
+  ru: {
+    'hero.subtitle':   'Бесплатный оверлей реального времени для <strong>Aion 2</strong> (PC) — урон всей пати прямо во время боя.',
+    'hero.download':   'Скачать v1.1.8',
+    'hero.note':       'Windows 10 / 11 · x64 · Без инжекта кода',
+
+    'feat.title':      'Возможности',
+    'feat.dps.h':      'Урон в реальном времени',
+    'feat.dps.p':      'Обновление каждые 500 мс для всех членов пати — видишь, кто и сколько бьёт прямо во время боя.',
+    'feat.skills.h':   'Разбивка по скиллам',
+    'feat.skills.p':   'Нажми на игрока и увидишь статистику каждого скилла: иконки, количество ударов, процент критов, мультихиты и многое другое.',
+    'feat.buffs.h':    'Тайм-лайн баффов',
+    'feat.buffs.p':    'Какие баффы были активны и как они влияли на урон в течение всего боя — в виде удобного графика.',
+    'feat.history.h':  'История боёв',
+    'feat.history.p':  'Все прошлые бои сохраняются. Фильтруй по боссу, дате или классу и сравнивай свои результаты.',
+    'feat.boss.h':     'Отслеживание боссов',
+    'feat.boss.p':     'Имя текущего босса и суммарный урон по нему определяются автоматически.',
+    'feat.lang.h':     '10 языков',
+    'feat.lang.p':     'RU · EN · DE · FR · ES · PT · 日本語 · 한국어 · 简中 · 繁中 — выбирается в настройках оверлея.',
+
+    'shots.title':     'Скриншоты',
+    'shots.s1':        'Разбивка по скиллам — детальная статистика каждого умения',
+    'shots.s2':        'Тайм-лайн баффов — как усиления влияли на урон',
+    'shots.s3':        'История боёв — все прошлые сражения в одном списке',
+
+    'install.title':   'Установка',
+    'install.s1':      '<strong>Скачай</strong> установщик по кнопке выше.',
+    'install.s2':      '<strong>Запусти</strong> его. Если появится SmartScreen — нажми <strong>Подробнее → Выполнить в любом случае</strong>.',
+    'install.s3':      '<strong>Открой</strong> <em>aion2t.com DPS</em> через меню Пуск или ярлык на рабочем столе.',
+    'install.s4':      '<strong>Запусти Aion 2</strong> и войди в подземелье — оверлей заполнится автоматически как только начнётся бой.',
+
+    'bugs.title':      'Нашёл баг?',
+    'bugs.subtitle':   'Мы будем рады любому отчёту — это помогает сделать программу лучше.',
+    'bugs.github.p':   'Лучший способ: подробное описание с шагами воспроизведения. Отвечаем быстро.',
+    'bugs.discord.p':  'Напиши в канал #dps-meter или упомяни @dev. Сервер открытый.',
+    'bugs.contact.h':  'Форма обратной связи',
+    'bugs.contact.p':  'Если не хочешь регистрироваться нигде — просто напиши через форму на сайте.',
+    'bugs.open':       'Открыть',
+  },
+
+  en: {
+    'hero.subtitle':   'Free real-time DPS overlay for <strong>Aion 2</strong> (PC) — see every party member\'s damage as it happens.',
+    'hero.download':   'Download v1.1.8',
+    'hero.note':       'Windows 10 / 11 · x64 · No code injection',
+
+    'feat.title':      'Features',
+    'feat.dps.h':      'Real-time DPS',
+    'feat.dps.p':      'Updates every 500 ms for all party members — see who hits what during the fight.',
+    'feat.skills.h':   'Skill breakdown',
+    'feat.skills.p':   'Click any player to see per-skill stats: icons, hit counts, crit rates, multi-hits and more.',
+    'feat.buffs.h':    'Buff timeline',
+    'feat.buffs.p':    'See which buffs were active and how they affected DPS throughout the fight — displayed as a clear chart.',
+    'feat.history.h':  'Fight history',
+    'feat.history.p':  'All past fights are saved. Filter by boss, date or class and compare your performance over time.',
+    'feat.boss.h':     'Boss tracking',
+    'feat.boss.p':     'The current boss name and total damage dealt to it are detected automatically.',
+    'feat.lang.h':     '10 languages',
+    'feat.lang.p':     'RU · EN · DE · FR · ES · PT · 日本語 · 한국어 · 简中 · 繁中 — switch in the overlay settings.',
+
+    'shots.title':     'Screenshots',
+    'shots.s1':        'Skill breakdown — detailed stats for every ability',
+    'shots.s2':        'Buff timeline — how buffs affected your DPS',
+    'shots.s3':        'Fight history — all past battles in one list',
+
+    'install.title':   'Installation',
+    'install.s1':      '<strong>Download</strong> the installer using the button above.',
+    'install.s2':      '<strong>Run</strong> it. If Windows SmartScreen appears — click <strong>More info → Run anyway</strong>.',
+    'install.s3':      '<strong>Open</strong> <em>aion2t.com DPS</em> from the Start menu or your desktop shortcut.',
+    'install.s4':      '<strong>Launch Aion 2</strong> and enter a dungeon — the overlay populates automatically once combat starts.',
+
+    'bugs.title':      'Found a bug?',
+    'bugs.subtitle':   'Any report is welcome — it helps us make the tool better.',
+    'bugs.github.p':   'Best way: a detailed description with steps to reproduce. We respond fast.',
+    'bugs.discord.p':  'Post in #dps-meter or mention @dev. The server is open to everyone.',
+    'bugs.contact.h':  'Contact form',
+    'bugs.contact.p':  'Don\'t want to register anywhere? Just drop us a message via the website form.',
+    'bugs.open':       'Open',
+  },
+
+  ko: {
+    'hero.subtitle':   '<strong>Aion 2</strong> (PC)를 위한 무료 실시간 DPS 오버레이 — 전투 중 파티원 전체의 피해량을 바로 확인하세요.',
+    'hero.download':   'v1.1.8 다운로드',
+    'hero.note':       'Windows 10 / 11 · x64 · 코드 인젝션 없음',
+
+    'feat.title':      '기능',
+    'feat.dps.h':      '실시간 DPS',
+    'feat.dps.p':      '전체 파티원의 피해량을 500ms마다 업데이트 — 전투 중 누가 얼마나 딜을 넣는지 바로 확인합니다.',
+    'feat.skills.h':   '스킬별 분석',
+    'feat.skills.p':   '플레이어를 클릭하면 스킬별 통계를 확인할 수 있습니다: 아이콘, 히트 수, 치명타율, 다중 타격 등.',
+    'feat.buffs.h':    '버프 타임라인',
+    'feat.buffs.p':    '전투 중 어떤 버프가 활성화되었고 DPS에 어떤 영향을 미쳤는지 차트로 확인할 수 있습니다.',
+    'feat.history.h':  '전투 기록',
+    'feat.history.p':  '지난 모든 전투가 저장됩니다. 보스, 날짜, 직업별로 필터링하여 성과를 비교하세요.',
+    'feat.boss.h':     '보스 추적',
+    'feat.boss.p':     '현재 보스 이름과 총 피해량이 자동으로 감지됩니다.',
+    'feat.lang.h':     '10개 언어',
+    'feat.lang.p':     'RU · EN · DE · FR · ES · PT · 日本語 · 한국어 · 简中 · 繁中 — 오버레이 설정에서 변경 가능.',
+
+    'shots.title':     '스크린샷',
+    'shots.s1':        '스킬별 분석 — 각 스킬의 세부 통계',
+    'shots.s2':        '버프 타임라인 — 버프가 DPS에 미친 영향',
+    'shots.s3':        '전투 기록 — 모든 과거 전투 목록',
+
+    'install.title':   '설치 방법',
+    'install.s1':      '위 버튼으로 <strong>설치 파일을 다운로드</strong>하세요.',
+    'install.s2':      '<strong>실행</strong>하세요. Windows SmartScreen이 표시되면 <strong>추가 정보 → 실행</strong>을 클릭하세요.',
+    'install.s3':      '시작 메뉴 또는 바탕화면 바로가기에서 <strong>aion2t.com DPS를 실행</strong>하세요.',
+    'install.s4':      '<strong>Aion 2를 실행</strong>하고 던전에 입장하세요 — 전투가 시작되면 오버레이가 자동으로 채워집니다.',
+
+    'bugs.title':      '버그를 발견하셨나요?',
+    'bugs.subtitle':   '어떤 제보든 환영합니다 — 더 나은 프로그램을 만드는 데 도움이 됩니다.',
+    'bugs.github.p':   '가장 좋은 방법: 재현 단계가 포함된 상세한 설명. 빠르게 답변드립니다.',
+    'bugs.discord.p':  '#dps-meter 채널에 작성하거나 @dev를 멘션하세요. 서버는 누구에게나 열려 있습니다.',
+    'bugs.contact.h':  '문의 양식',
+    'bugs.contact.p':  '어디에도 가입하고 싶지 않으시다면 — 웹사이트 양식으로 메시지를 보내주세요.',
+    'bugs.open':       '열기',
+  },
+
+};
+
+/* ── Engine ── */
+let currentLang = 'ru';
+
+function setLang(lang) {
+  currentLang = lang;
+  document.querySelectorAll('.lang-btn').forEach(b =>
+    b.classList.toggle('active', b.getAttribute('onclick').includes("'" + lang + "'"))
+  );
+  document.querySelectorAll('.i18n').forEach(el => {
+    const key = el.dataset.key;
+    const val = i18n[lang]?.[key];
+    if (val !== undefined) el.innerHTML = val;
+  });
+  document.documentElement.lang = lang === 'ko' ? 'ko' : lang === 'en' ? 'en' : 'ru';
+}
+
+function openLb(src) {
+  document.getElementById('lb-img').src = src;
+  document.getElementById('lb').classList.add('open');
+}
+function closeLb() { document.getElementById('lb').classList.remove('open'); }
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLb(); });
+
+// init
+setLang('ru');
+</script>
+
+</body>
+</html>
