@@ -3,11 +3,11 @@
   <h1>aion2t.com DPS Meter</h1>
   <p>Real-time DPS overlay for <strong>Aion 2</strong> (PC client)</p>
 
-  [![Version](https://img.shields.io/badge/version-1.1.8-blue)](#download)
+  [![Version](https://img.shields.io/badge/version-1.1.9-blue)](#download)
   [![Platform](https://img.shields.io/badge/platform-Windows%2010%2F11%20x64-lightgrey)](#download)
   [![Website](https://img.shields.io/badge/website-aion2t.com%2Fdps--meter-orange)](https://aion2t.com/dps-meter)
 
-  [**⬇ Download v1.1.8**](https://grachy.github.io/aion2t-dps-meter/aion2t-dps-setup-1.1.8-x64.exe) · [Website](https://aion2t.com/dps-meter) · [Report a Bug](https://github.com/Grachy/aion2t-dps-meter/issues)
+  [**⬇ Download v1.1.9**](https://github.com/Grachy/aion2t-dps-meter/releases/download/v1.1.9/aion2t-dps-meter_1.1.9_x64-setup.exe) · [Website](https://aion2t.com/dps-meter) · [Report a Bug](https://github.com/Grachy/aion2t-dps-meter/issues)
 
   ---
 
@@ -45,7 +45,7 @@ A lightweight transparent overlay that reads Aion 2 network packets and shows **
 
 ## Download & Install <a name="download"></a>
 
-**[⬇ Download aion2t-dps-setup-1.1.8-x64.exe](https://grachy.github.io/aion2t-dps-meter/aion2t-dps-setup-1.1.8-x64.exe)**
+**[⬇ Download aion2t-dps-meter_1.1.9_x64-setup.exe](https://github.com/Grachy/aion2t-dps-meter/releases/download/v1.1.9/aion2t-dps-meter_1.1.9_x64-setup.exe)**
 
 1. Download the installer above
 2. Run it — if Windows SmartScreen appears, click **More info → Run anyway**
@@ -89,7 +89,7 @@ A: Click **More info → Run anyway**. No paid code-signing certificate yet.
 
 Лёгкий прозрачный оверлей, который читает сетевые пакеты Aion 2 и показывает **урон в реальном времени** для каждого участника пати — без модификации игровых файлов и без инъекций кода.
 
-**[⬇ Скачать v1.1.8](https://grachy.github.io/aion2t-dps-meter/aion2t-dps-setup-1.1.8-x64.exe)**
+**[⬇ Скачать v1.1.9](https://github.com/Grachy/aion2t-dps-meter/releases/download/v1.1.9/aion2t-dps-meter_1.1.9_x64-setup.exe)**
 
 ### Возможности
 
@@ -124,7 +124,7 @@ A: Click **More info → Run anyway**. No paid code-signing certificate yet.
 
 Ein leichtes transparentes Overlay, das Aion-2-Netzwerkpakete liest und den **Schaden in Echtzeit** für alle Gruppenmitglieder anzeigt — ohne Spielmodifikation, ohne Code-Injection.
 
-**[⬇ Download v1.1.8](https://grachy.github.io/aion2t-dps-meter/aion2t-dps-setup-1.1.8-x64.exe)**
+**[⬇ Download v1.1.9](https://github.com/Grachy/aion2t-dps-meter/releases/download/v1.1.9/aion2t-dps-meter_1.1.9_x64-setup.exe)**
 
 ### Funktionen
 
@@ -158,7 +158,7 @@ Ein leichtes transparentes Overlay, das Aion-2-Netzwerkpakete liest und den **Sc
 
 Un overlay transparent léger qui lit les paquets réseau d'Aion 2 et affiche les **DPS en temps réel** pour chaque membre du groupe — sans modifier les fichiers du jeu, sans injection de code.
 
-**[⬇ Télécharger v1.1.8](https://grachy.github.io/aion2t-dps-meter/aion2t-dps-setup-1.1.8-x64.exe)**
+**[⬇ Télécharger v1.1.9](https://github.com/Grachy/aion2t-dps-meter/releases/download/v1.1.9/aion2t-dps-meter_1.1.9_x64-setup.exe)**
 
 ### Fonctionnalités
 
@@ -185,7 +185,7 @@ Un overlay transparent léger qui lit les paquets réseau d'Aion 2 et affiche le
 
 Un overlay transparente ligero que lee los paquetes de red de Aion 2 y muestra el **DPS en tiempo real** para cada miembro del grupo — sin modificar archivos del juego, sin inyección de código.
 
-**[⬇ Descargar v1.1.8](https://grachy.github.io/aion2t-dps-meter/aion2t-dps-setup-1.1.8-x64.exe)**
+**[⬇ Descargar v1.1.9](https://github.com/Grachy/aion2t-dps-meter/releases/download/v1.1.9/aion2t-dps-meter_1.1.9_x64-setup.exe)**
 
 ### Características
 
@@ -212,7 +212,7 @@ Un overlay transparente ligero que lee los paquetes de red de Aion 2 y muestra e
 
 Um overlay transparente leve que lê os pacotes de rede do Aion 2 e exibe o **DPS em tempo real** para cada membro do grupo — sem modificar arquivos do jogo, sem injeção de código.
 
-**[⬇ Baixar v1.1.8](https://grachy.github.io/aion2t-dps-meter/aion2t-dps-setup-1.1.8-x64.exe)**
+**[⬇ Baixar v1.1.9](https://github.com/Grachy/aion2t-dps-meter/releases/download/v1.1.9/aion2t-dps-meter_1.1.9_x64-setup.exe)**
 
 ### Funcionalidades
 
@@ -239,7 +239,7 @@ Um overlay transparente leve que lê os pacotes de rede do Aion 2 e exibe o **DP
 
 Aion 2のネットワークパケットを読み取り、パーティ全員の**リアルタイムDPS**を表示する軽量透明オーバーレイ — ゲームファイルの変更なし、コードインジェクションなし。
 
-**[⬇ ダウンロード v1.1.8](https://grachy.github.io/aion2t-dps-meter/aion2t-dps-setup-1.1.8-x64.exe)**
+**[⬇ ダウンロード v1.1.9](https://github.com/Grachy/aion2t-dps-meter/releases/download/v1.1.9/aion2t-dps-meter_1.1.9_x64-setup.exe)**
 
 ### 機能
 
@@ -266,7 +266,7 @@ Aion 2のネットワークパケットを読み取り、パーティ全員の**
 
 Aion 2의 네트워크 패킷을 읽어 파티 전원의 **실시간 DPS**를 표시하는 가벼운 투명 오버레이 — 게임 파일 수정 없음, 코드 주입 없음.
 
-**[⬇ 다운로드 v1.1.8](https://grachy.github.io/aion2t-dps-meter/aion2t-dps-setup-1.1.8-x64.exe)**
+**[⬇ 다운로드 v1.1.9](https://github.com/Grachy/aion2t-dps-meter/releases/download/v1.1.9/aion2t-dps-meter_1.1.9_x64-setup.exe)**
 
 ### 기능
 
@@ -293,7 +293,7 @@ Aion 2의 네트워크 패킷을 읽어 파티 전원의 **실시간 DPS**를 �
 
 一款轻量级透明覆盖工具，通过读取 Aion 2 网络数据包，实时显示队伍中每位成员的**DPS** — 不修改游戏文件，不注入代码。
 
-**[⬇ 下载 v1.1.8](https://grachy.github.io/aion2t-dps-meter/aion2t-dps-setup-1.1.8-x64.exe)**
+**[⬇ 下载 v1.1.9](https://github.com/Grachy/aion2t-dps-meter/releases/download/v1.1.9/aion2t-dps-meter_1.1.9_x64-setup.exe)**
 
 ### 功能
 
@@ -320,7 +320,7 @@ Aion 2의 네트워크 패킷을 읽어 파티 전원의 **실시간 DPS**를 �
 
 一款輕量級透明覆蓋工具，透過讀取 Aion 2 網路封包，即時顯示隊伍中每位成員的**DPS** — 不修改遊戲檔案，不注入程式碼。
 
-**[⬇ 下載 v1.1.8](https://grachy.github.io/aion2t-dps-meter/aion2t-dps-setup-1.1.8-x64.exe)**
+**[⬇ 下載 v1.1.9](https://github.com/Grachy/aion2t-dps-meter/releases/download/v1.1.9/aion2t-dps-meter_1.1.9_x64-setup.exe)**
 
 ### 功能
 
