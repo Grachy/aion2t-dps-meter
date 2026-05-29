@@ -1,5 +1,5 @@
 {
-  "version": "1.1.10",
+  "version": "1.1.11",
   "url": "https://aion2t.com/dps-meter",
-  "notes": "Version check notification, DPS upload to leaderboard, reduced log overhead."
+  "notes": "Bug fixes: full party data now saved in fight history and uploaded to site; boss add damage included in details when 'boss adds' is enabled."
 }
