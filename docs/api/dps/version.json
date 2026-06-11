@@ -1,5 +1,5 @@
 {
-  "version": "1.1.11",
+  "version": "1.1.12",
   "url": "https://aion2t.com/dps-meter",
-  "notes": "Bug fixes: full party data now saved in fight history and uploaded to site; boss add damage included in details when 'boss adds' is enabled."
+  "notes": "Big update: DPS TOP leaderboard (click a player's name to open their profile); Gear Score & Combat Power shown per party member with a GS/CP toggle; TW/KR region support with cross-server [TAG] names; Russian class names and fuller UI localization; boss-name detection; and many fixes to boss death/HP tracking, phase transitions, ghost bosses after a kill, and summon/pet damage attribution."
 }
