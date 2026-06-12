@@ -1,5 +1,5 @@
 {
-  "version": "1.1.12",
+  "version": "1.1.13",
   "url": "https://aion2t.com/dps-meter",
-  "notes": "Big update: DPS TOP leaderboard (click a player's name to open their profile); Gear Score & Combat Power shown per party member with a GS/CP toggle; TW/KR region support with cross-server [TAG] names; Russian class names and fuller UI localization; boss-name detection; and many fixes to boss death/HP tracking, phase transitions, ghost bosses after a kill, and summon/pet damage attribution."
+  "notes": "Clicking a player's name now opens their leaderboard profile with region, server and class pre-filled. Toggle Gear Score / Combat Power directly in fight history. Players who belong to a legion/guild no longer disappear from the meter. Summoner (Spiritmaster) pet damage and cleric effect & DOT damage are now credited to the right player instead of being merged into another same-class member, in both the meter and the saved/uploaded record. Also fixes the fight-history party composition (no more phantom extra players) and fills the leaderboard server reliably from the party list."
 }
