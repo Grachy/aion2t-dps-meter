@@ -1,5 +1,5 @@
 {
-  "version": "1.1.13",
+  "version": "1.1.14",
   "url": "https://aion2t.com/dps-meter",
-  "notes": "Clicking a player's name now opens their leaderboard profile with region, server and class pre-filled. Toggle Gear Score / Combat Power directly in fight history. Players who belong to a legion/guild no longer disappear from the meter. Summoner (Spiritmaster) pet damage and cleric effect & DOT damage are now credited to the right player instead of being merged into another same-class member, in both the meter and the saved/uploaded record. Also fixes the fight-history party composition (no more phantom extra players) and fills the leaderboard server reliably from the party list."
+  "notes": "Party members are no longer dropped from the meter when the local player hasn't been identified yet — your party's damage stays visible. Your own row also stays on the meter (shown as #id, without the highlight) when the game hasn't sent your character info yet, instead of vanishing. More reliable boss-name detection means fewer fights shown as 'Boss #id'. The party roster can now also be picked up even when the meter is started after you've already entered a dungeon."
 }
