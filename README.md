@@ -49,8 +49,12 @@ The meter captures traffic through **Npcap**, so install Npcap once before runni
 
 ### 1. Install Npcap (required)
 
-Download and run the installer from **[npcap.com/#download](https://npcap.com/#download)**.
-In the Npcap installer, tick **"Install Npcap in WinPcap API-compatible Mode"** — without it the meter can't find `wpcap.dll` and shows *"Npcap is required for packet capture"*.
+Download and run the installer from **[npcap.com/#download](https://npcap.com/#download)**. In the Npcap installer:
+
+- ✅ tick **"Install Npcap in WinPcap API-compatible Mode"** — without it the meter can't find `wpcap.dll` and shows *"Npcap is required for packet capture"*.
+- ⬜ leave **"Restrict Npcap driver's access to Administrators only"** **unchecked** — if it's on, the meter (run as a normal user) can't open the adapter and the overlay stays empty. (If it's already on, run the meter as administrator.)
+
+The Npcap installer itself elevates via UAC automatically — you don't need to start it as admin manually.
 
 ### 2. Install the meter
 
@@ -118,7 +122,7 @@ A: Click **More info → Run anyway**. No paid code-signing certificate yet.
 
 ### Установка
 
-1. **Установи Npcap (обязательно)** — скачай с [npcap.com/#download](https://npcap.com/#download) и при установке отметь галочку **«Install Npcap in WinPcap API-compatible Mode»**. Без неё метр не найдёт `wpcap.dll` и покажет «Npcap is required for packet capture»
+1. **Установи Npcap (обязательно)** — скачай с [npcap.com/#download](https://npcap.com/#download). В установщике Npcap: ✅ отметь **«Install Npcap in WinPcap API-compatible Mode»** (без неё метр не найдёт `wpcap.dll` и покажет «Npcap is required for packet capture»), ⬜ а **«Restrict Npcap driver's access to Administrators only»** оставь **выключенной** — иначе метр, запущенный обычным пользователем, не сможет открыть адаптер и список будет пустым (если уже включена — запускай метр от Администратора). Сам установщик Npcap поднимает UAC автоматически, отдельно запускать «от админа» не нужно
 2. Скачай установщик метра по ссылке выше и запусти его — если появится SmartScreen, нажми **Подробнее → Выполнить в любом случае**
 3. Запусти **aion2t.com DPS** через меню Пуск или ярлык на рабочем столе
 4. Запусти Aion 2 и войди в подземелье — оверлей заполнится автоматически
