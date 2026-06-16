@@ -1,5 +1,5 @@
 {
-  "version": "1.1.14",
+  "version": "1.1.15",
   "url": "https://aion2t.com/dps-meter",
-  "notes": "Party members are no longer dropped from the meter when the local player hasn't been identified yet — your party's damage stays visible. Your own row also stays on the meter (shown as #id, without the highlight) when the game hasn't sent your character info yet, instead of vanishing. More reliable boss-name detection means fewer fights shown as 'Boss #id'. The party roster can now also be picked up even when the meter is started after you've already entered a dungeon."
+  "notes": "The meter now works when a VPN or network accelerator (e.g. NordVPN) is running — previously it could lock onto the wrong local connection and show no data. The boss HP bar no longer jumps up and down during a fight. The Chalice of Muspel raid bosses (Iscariel, Kaldrix, Blazing Guardian Sword) are now recognized by name."
 }
