@@ -45,6 +45,15 @@ A lightweight transparent overlay that reads Aion 2 network packets and shows **
 
 ## Download & Install <a name="download"></a>
 
+The meter captures traffic through **Npcap**, so install Npcap once before running it.
+
+### 1. Install Npcap (required)
+
+Download and run the installer from **[npcap.com/#download](https://npcap.com/#download)**.
+In the Npcap installer, tick **"Install Npcap in WinPcap API-compatible Mode"** — without it the meter can't find `wpcap.dll` and shows *"Npcap is required for packet capture"*.
+
+### 2. Install the meter
+
 **[⬇ Download aion2t-dps-setup-1.1.14-x64.exe](https://raw.githubusercontent.com/Grachy/aion2t-dps-meter/master/docs/aion2t-dps-setup-1.1.14-x64.exe)**
 
 1. Download the installer above
@@ -55,8 +64,10 @@ A lightweight transparent overlay that reads Aion 2 network packets and shows **
 | | |
 |---|---|
 | OS | Windows 10 / 11 (x64) |
+| Packet capture | **Npcap** in WinPcap API-compatible mode — [npcap.com](https://npcap.com/#download) |
+| Runtime | WebView2 (preinstalled on Windows 10/11 via Microsoft Edge) |
 | Network | Must be on the same machine as the Aion 2 client |
-| Privileges | Standard user (no admin required) |
+| Privileges | Standard user to run the meter; admin only to install Npcap |
 
 ## Hotkeys
 
@@ -71,7 +82,7 @@ A lightweight transparent overlay that reads Aion 2 network packets and shows **
 A: The meter reads network packets passively — no game files modified, nothing injected. Use at your own discretion.
 
 **Q: The overlay shows no data.**  
-A: Make sure Aion 2 is running on the same PC and you are in active combat.
+A: Make sure **Npcap is installed** (the meter prompts you to download it if it's missing) — then check that Aion 2 is running on the same PC and you are in active combat.
 
 **Q: DPS values look wrong after switching parties.**  
 A: Press `Ctrl+R` to reset.
@@ -107,10 +118,17 @@ A: Click **More info → Run anyway**. No paid code-signing certificate yet.
 
 ### Установка
 
-1. Скачай установщик по ссылке выше
-2. Запусти его — если появится SmartScreen, нажми **Подробнее → Выполнить в любом случае**
+1. **Установи Npcap (обязательно)** — скачай с [npcap.com/#download](https://npcap.com/#download) и при установке отметь галочку **«Install Npcap in WinPcap API-compatible Mode»**. Без неё метр не найдёт `wpcap.dll` и покажет «Npcap is required for packet capture»
+2. Скачай установщик метра по ссылке выше и запусти его — если появится SmartScreen, нажми **Подробнее → Выполнить в любом случае**
 3. Запусти **aion2t.com DPS** через меню Пуск или ярлык на рабочем столе
 4. Запусти Aion 2 и войди в подземелье — оверлей заполнится автоматически
+
+| | |
+|---|---|
+| ОС | Windows 10 / 11 (x64) |
+| Захват пакетов | **Npcap** в режиме WinPcap API-compatible — [npcap.com](https://npcap.com/#download) |
+| Сеть | На том же ПК, что и клиент Aion 2 |
+| Права | Обычный пользователь для запуска; админ — только для установки Npcap |
 
 </details>
 
@@ -141,8 +159,8 @@ Ein leichtes transparentes Overlay, das Aion-2-Netzwerkpakete liest und den **Sc
 
 ### Installation
 
-1. Installer herunterladen
-2. Ausführen — bei SmartScreen-Warnung: **Weitere Informationen → Trotzdem ausführen**
+1. **Npcap installieren (erforderlich)** — von [npcap.com/#download](https://npcap.com/#download) herunterladen und im Installer **„Install Npcap in WinPcap API-compatible Mode"** anhaken. Sonst findet das Tool `wpcap.dll` nicht und meldet „Npcap is required for packet capture"
+2. Meter-Installer herunterladen und ausführen — bei SmartScreen-Warnung: **Weitere Informationen → Trotzdem ausführen**
 3. **aion2t.com DPS** über das Startmenü starten
 4. Aion 2 starten und einen Dungeon betreten — das Overlay füllt sich automatisch
 
@@ -159,6 +177,8 @@ Ein leichtes transparentes Overlay, das Aion-2-Netzwerkpakete liest und den **Sc
 Un overlay transparent léger qui lit les paquets réseau d'Aion 2 et affiche les **DPS en temps réel** pour chaque membre du groupe — sans modifier les fichiers du jeu, sans injection de code.
 
 **[⬇ Télécharger v1.1.14](https://raw.githubusercontent.com/Grachy/aion2t-dps-meter/master/docs/aion2t-dps-setup-1.1.14-x64.exe)**
+
+> ⚠️ **Prérequis : installez [Npcap](https://npcap.com/#download)** en cochant « Install Npcap in WinPcap API-compatible Mode » — sinon le meter ne peut pas capturer les paquets.
 
 ### Fonctionnalités
 
@@ -187,6 +207,8 @@ Un overlay transparente ligero que lee los paquetes de red de Aion 2 y muestra e
 
 **[⬇ Descargar v1.1.14](https://raw.githubusercontent.com/Grachy/aion2t-dps-meter/master/docs/aion2t-dps-setup-1.1.14-x64.exe)**
 
+> ⚠️ **Requisito: instala [Npcap](https://npcap.com/#download)** marcando «Install Npcap in WinPcap API-compatible Mode» — sin él el meter no puede capturar paquetes.
+
 ### Características
 
 - **DPS en tiempo real** — actualización cada 500 ms para todos los miembros del grupo
@@ -213,6 +235,8 @@ Un overlay transparente ligero que lee los paquetes de red de Aion 2 y muestra e
 Um overlay transparente leve que lê os pacotes de rede do Aion 2 e exibe o **DPS em tempo real** para cada membro do grupo — sem modificar arquivos do jogo, sem injeção de código.
 
 **[⬇ Baixar v1.1.14](https://raw.githubusercontent.com/Grachy/aion2t-dps-meter/master/docs/aion2t-dps-setup-1.1.14-x64.exe)**
+
+> ⚠️ **Pré-requisito: instale o [Npcap](https://npcap.com/#download)** marcando "Install Npcap in WinPcap API-compatible Mode" — sem ele o meter não captura pacotes.
 
 ### Funcionalidades
 
@@ -241,6 +265,8 @@ Aion 2のネットワークパケットを読み取り、パーティ全員の**
 
 **[⬇ ダウンロード v1.1.14](https://raw.githubusercontent.com/Grachy/aion2t-dps-meter/master/docs/aion2t-dps-setup-1.1.14-x64.exe)**
 
+> ⚠️ **前提条件：[Npcap](https://npcap.com/#download) をインストール**してください（インストール時に「Install Npcap in WinPcap API-compatible Mode」にチェック）。これがないとパケットを取得できません。
+
 ### 機能
 
 - **リアルタイムDPS** — 全メンバーのダメージを500msごとに更新
@@ -267,6 +293,8 @@ Aion 2のネットワークパケットを読み取り、パーティ全員の**
 Aion 2의 네트워크 패킷을 읽어 파티 전원의 **실시간 DPS**를 표시하는 가벼운 투명 오버레이 — 게임 파일 수정 없음, 코드 주입 없음.
 
 **[⬇ 다운로드 v1.1.14](https://raw.githubusercontent.com/Grachy/aion2t-dps-meter/master/docs/aion2t-dps-setup-1.1.14-x64.exe)**
+
+> ⚠️ **필수: [Npcap](https://npcap.com/#download) 설치** — 설치 시 "Install Npcap in WinPcap API-compatible Mode"에 체크하세요. 없으면 패킷을 캡처할 수 없습니다.
 
 ### 기능
 
@@ -295,6 +323,8 @@ Aion 2의 네트워크 패킷을 읽어 파티 전원의 **실시간 DPS**를 �
 
 **[⬇ 下载 v1.1.14](https://raw.githubusercontent.com/Grachy/aion2t-dps-meter/master/docs/aion2t-dps-setup-1.1.14-x64.exe)**
 
+> ⚠️ **前置要求：安装 [Npcap](https://npcap.com/#download)**，安装时勾选 “Install Npcap in WinPcap API-compatible Mode”，否则无法捕获数据包。
+
 ### 功能
 
 - **实时 DPS** — 每 500ms 更新全队伤害数据
@@ -321,6 +351,8 @@ Aion 2의 네트워크 패킷을 읽어 파티 전원의 **실시간 DPS**를 �
 一款輕量級透明覆蓋工具，透過讀取 Aion 2 網路封包，即時顯示隊伍中每位成員的**DPS** — 不修改遊戲檔案，不注入程式碼。
 
 **[⬇ 下載 v1.1.14](https://raw.githubusercontent.com/Grachy/aion2t-dps-meter/master/docs/aion2t-dps-setup-1.1.14-x64.exe)**
+
+> ⚠️ **前置需求：安裝 [Npcap](https://npcap.com/#download)**，安裝時勾選「Install Npcap in WinPcap API-compatible Mode」，否則無法擷取封包。
 
 ### 功能
 
