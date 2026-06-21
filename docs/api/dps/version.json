@@ -1,5 +1,5 @@
 {
-  "version": "1.1.15",
+  "version": "1.1.16",
   "url": "https://aion2t.com/dps-meter",
-  "notes": "The meter now works when a VPN or network accelerator (e.g. NordVPN) is running — previously it could lock onto the wrong local connection and show no data. The boss HP bar no longer jumps up and down during a fight. The Chalice of Muspel raid bosses (Iscariel, Kaldrix, Blazing Guardian Sword) are now recognized by name."
+  "notes": "Boss names now appear in the fight history even when you open the meter after a fight has already started — previously such bosses were shown as \"Boss #<number>\" for the whole fight. Party members of the same class are handled correctly: a second same-class player (for example, two mages) is no longer merged into another player and dropped from the meter. Your own character is no longer occasionally displayed with the wrong class."
 }
