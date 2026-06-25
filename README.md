@@ -104,7 +104,7 @@ A: Click **More info → Run anyway**. No paid code-signing certificate yet.
 
 Лёгкий прозрачный оверлей, который читает сетевые пакеты Aion 2 и показывает **урон в реальном времени** для каждого участника пати — без модификации игровых файлов и без инъекций кода.
 
-**[⬇ Скачать v1.1.17](https://raw.githubusercontent.com/Grachy/aion2t-dps-meter/master/docs/aion2t-dps-setup-1.1.17-x64.exe)**
+**[⬇ Скачать v1.1.17](https://disk.yandex.com/d/ZTZDbNMDDAsTKQ)**
 
 ### Возможности
 
