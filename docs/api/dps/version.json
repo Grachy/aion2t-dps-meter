@@ -1,5 +1,5 @@
 {
-  "version": "1.1.16",
-  "url": "https://aion2t.com/dps-meter",
-  "notes": "Boss names now appear in the fight history even when you open the meter after a fight has already started — previously such bosses were shown as \"Boss #<number>\" for the whole fight. Party members of the same class are handled correctly: a second same-class player (for example, two mages) is no longer merged into another player and dropped from the meter. Your own character is no longer occasionally displayed with the wrong class."
+  "version": "1.1.17",
+  "url": "https://disk.yandex.com/d/dt3jlffS8yNX_g",
+  "notes": "Fixes: summon DOT phantom rows (familiar damage no longer creates ghost player entries); roster name binding guards (party member names can't be overwritten by nearby non-party players); live party surfacing gate (DOT-only entities no longer enter party list). Improvements: boss wipe-retry naming (boss keeps its name after a wipe respawn); boss HP revive detection; own-char name cache for mid-session restarts."
 }
