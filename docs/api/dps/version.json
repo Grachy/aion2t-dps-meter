@@ -1,5 +1,5 @@
 {
   "version": "1.1.17",
-  "url": "https://disk.yandex.com/d/dt3jlffS8yNX_g",
+  "url": "https://disk.yandex.com/d/qm0kVrZVLcZHIw",
   "notes": "Fixes: summon DOT phantom rows (familiar damage no longer creates ghost player entries); roster name binding guards (party member names can't be overwritten by nearby non-party players); live party surfacing gate (DOT-only entities no longer enter party list). Improvements: boss wipe-retry naming (boss keeps its name after a wipe respawn); boss HP revive detection; own-char name cache for mid-session restarts."
 }
