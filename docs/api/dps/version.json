@@ -1,5 +1,5 @@
 {
-  "version": "1.1.17",
+  "version": "1.1.18",
   "url": "https://disk.yandex.com/d/ZTZDbNMDDAsTKQ",
-  "notes": "Fixes: summon DOT phantom rows (familiar damage no longer creates ghost player entries); roster name binding guards (party member names can't be overwritten by nearby non-party players); live party surfacing gate (DOT-only entities no longer enter party list). Improvements: boss wipe-retry naming (boss keeps its name after a wipe respawn); boss HP revive detection; own-char name cache for mid-session restarts."
+  "notes": "Combat Power (CP) detection from party roster, LiveStatus and gear-score packets. Reliable fight uploads with retry and frontend fallback. Smarter self-proxy merge with class verification. Fixed DOT attribution, player death counting, and GS reading. Compact roster parser for TW."
 }
