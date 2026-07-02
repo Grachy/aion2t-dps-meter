@@ -83,7 +83,7 @@ The Npcap installer itself elevates via UAC automatically — you don't need to 
 ## What's New in 1.1.19
 
 - **Season 1 / Chapter 1 support** — updated packet protocol for the latest client version: new OWN_CHAR marker, damage packet format changes, and shifted opcodes for mob/player spawn
-- **Brawler class** — full support for the new Brawler class (격투성) added in Season 1, including skill detection, class icons, and job code mapping
+- **Brawler class** — basic detection for the new Brawler class (격투성) added in Season 1; class icon and skill names coming soon
 - **277 new bosses** — boss database updated with all Chapter 1 dungeon and raid bosses across all 10 locales
 - **Fixed owner detection** — the meter owner now appears reliably in the live display even before the OWN_CHAR packet arrives; roster reconciliation correctly identifies the owner's combat entity
 - **Fixed owner nickname override** — OWN_CHAR now force-overwrites stale nicknames, preventing a wrong name from sticking on the owner row

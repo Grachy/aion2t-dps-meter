@@ -1,5 +1,5 @@
 {
   "version": "1.1.19",
   "url": "https://disk.yandex.com/d/ZTZDbNMDDAsTKQ",
-  "notes": "Season 1 / Chapter 1 support: updated packet protocol (OWN_CHAR marker, damage format, opcodes). Added Brawler class. 277 new bosses from Chapter 1 content. Fixed owner not showing in live meter. Player limit raised to 5-30."
+  "notes": "Season 1 / Chapter 1 support: updated packet protocol (OWN_CHAR marker, damage format, opcodes). Brawler class detection (icon and skill names coming soon). 277 new bosses from Chapter 1 content. Fixed owner not showing in live meter. Player limit raised to 5-30."
 }
