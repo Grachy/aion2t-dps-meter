@@ -1,5 +1,5 @@
 {
-  "version": "1.1.19",
+  "version": "1.1.20",
   "url": "https://disk.yandex.com/d/ZTZDbNMDDAsTKQ",
-  "notes": "Season 1 / Chapter 1 support: updated packet protocol (OWN_CHAR marker, damage format, opcodes). Brawler class detection (icon and skill names coming soon). 277 new bosses from Chapter 1 content. Fixed owner not showing in live meter. Player limit raised to 5-30."
+  "notes": "New rDPS and HPS modes. rDPS (raid DPS) measures a player's true contribution to the party's damage: support classes' buffs and debuffs amplify everyone's hits, so rDPS credits each supporter for the extra damage their buffs enable and adjusts each dealer by the share that came from allies' buffs — supports finally get a fair number instead of near-zero, and pure DPS see how much of their output was self-earned. A dedicated rDPS tab breaks down each buff's added damage, the Buffs tab shows every buff's contribution in green, and you can set the meter's main metric to rDPS, DPS, or total damage. HPS (healing per second) lets the compact meter rank the party by effective healing (overhealing excluded) instead of damage, making healers measurable at a glance."
 }
