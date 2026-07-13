@@ -119,7 +119,7 @@ A: Click **More info → Run anyway**. No paid code-signing certificate yet.
 
 Лёгкий прозрачный оверлей, который читает сетевые пакеты Aion 2 и показывает **урон в реальном времени** для каждого участника пати — без модификации игровых файлов и без инъекций кода.
 
-**[⬇ Скачать v1.1.21](https://disk.yandex.com/d/ZTZDbNMDDAsTKQ)**
+**[⬇ Скачать v1.1.21](https://disk.yandex.com/d/BV4BC9x5J0eB_g)**
 
 ### Возможности
 
