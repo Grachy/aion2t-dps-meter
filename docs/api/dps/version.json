@@ -1,5 +1,5 @@
 {
-  "version": "1.1.20",
+  "version": "1.1.21",
   "url": "https://disk.yandex.com/d/ZTZDbNMDDAsTKQ",
-  "notes": "New rDPS and HPS modes. rDPS (raid DPS) measures a player's true contribution to the party's damage: support classes' buffs and debuffs amplify everyone's hits, so rDPS credits each supporter for the extra damage their buffs enable and adjusts each dealer by the share that came from allies' buffs — supports finally get a fair number instead of near-zero, and pure DPS see how much of their output was self-earned. A dedicated rDPS tab breaks down each buff's added damage, the Buffs tab shows every buff's contribution in green, and you can set the meter's main metric to rDPS, DPS, or total damage. HPS (healing per second) lets the compact meter rank the party by effective healing (overhealing excluded) instead of damage, making healers measurable at a glance."
+  "notes": "rDPS fixes for support classes whose buff lands as a self-buff. Gladiators (and any class whose damage-taken debuff, e.g. Murderous Burst, is delivered as a self-buff instead of on the boss) now receive proper rDPS credit for the party-wide damage their debuff enables; before, they earned nothing for it. When two players keep the same non-stacking buff or debuff up at once, its rDPS credit is now split fairly by uptime instead of going entirely to one of them. Also fixed: your own Combat Power occasionally not showing, and a phantom extra party member (a summoned pet mislabeled as a 6th player)."
 }
