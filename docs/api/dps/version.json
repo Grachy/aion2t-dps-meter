@@ -1,5 +1,5 @@
 {
-  "version": "1.1.21",
+  "version": "1.1.22",
   "url": "https://disk.yandex.com/d/BV4BC9x5J0eB_g",
-  "notes": "rDPS fixes for support classes whose buff lands as a self-buff. Gladiators (and any class whose damage-taken debuff, e.g. Murderous Burst, is delivered as a self-buff instead of on the boss) now receive proper rDPS credit for the party-wide damage their debuff enables; before, they earned nothing for it. When two players keep the same non-stacking buff or debuff up at once, its rDPS credit is now split fairly by uptime instead of going entirely to one of them. Also fixed: your own Combat Power occasionally not showing, and a phantom extra party member (a summoned pet mislabeled as a 6th player)."
+  "notes": "New: the meter now reads your Genus collection, pets and wings and attaches them to your aion2t.com profile alongside your fight uploads. Fixes: a phantom extra party member — an outside player attacking the same boss could show up as an extra row and be saved into your fight history, so party membership now requires positive proof instead of assuming anyone hitting your target is in your group; party members who join late are no longer dropped while the roster catches up; window size is now remembered when you resize with Settings, History or Details open; your character is identified at the start of a fight instead of the end and no longer swaps with a party member mid-fight; wiping on a boss starts a fresh attempt instead of merging into the previous pull."
 }
