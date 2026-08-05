@@ -88,6 +88,7 @@ Mirrors, if the direct link is blocked for you: [Mega](https://mega.nz/file/nCgX
 
 ### Fixes
 
+- **Skill names refreshed from the game client** — the skill list the meter ships with had been generated in early July and no longer matched the game. Two pairs had swapped places outright (Cleric's Judgment Thunder and Divine Punishment, and the Spiritmaster's Wind Spirit: Storm and Earth Spirit: Colossal Stalk), so the breakdown was labelling damage with the wrong skill. 1,062 names were corrected and 7,357 skills added.
 - **Missing party member** — a player whose entity id was very small (under 100) was skipped by the damage and buff parsers, so a full party could show up one row short.
 - **Crash on boss overkill** — a boss reporting below-zero remaining HP overflowed a 32-bit conversion and took down the packet assembler. The kill went undetected and the fight was never uploaded.
 - **Boss from the previous zone stayed selected** — after changing zone the old boss could remain the current target; a new attempt is now recognised from the boss's own HP.
