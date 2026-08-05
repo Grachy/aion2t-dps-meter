@@ -9,6 +9,8 @@
 
   [**⬇ Download v1.1.24**](https://raw.githubusercontent.com/Grachy/aion2t-dps-meter/master/docs/aion2t-dps-setup-1.1.24-x64.exe) · [Website](https://aion2t.com/dps-meter) · [Report a Bug](https://github.com/Grachy/aion2t-dps-meter/issues)
 
+  Mirrors: [Mega](https://mega.nz/file/nCgXgZYA#Vl-FGlhJJycE37yAvb4r5yH5AWxYnBRakRSx6P7Zr2w) · [Yandex Disk](https://disk.yandex.com/d/tcnOnfT6HGP5Yg)
+
   ---
 
   🇬🇧 English · [🇷🇺 Русский](#ru) · [🇩🇪 Deutsch](#de) · [🇫🇷 Français](#fr) · [🇪🇸 Español](#es) · [🇧🇷 Português](#pt) · [🇯🇵 日本語](#ja) · [🇰🇷 한국어](#ko) · [🇨🇳 简体中文](#zh-hans) · [🇹🇼 繁體中文](#zh-hant)
@@ -59,6 +61,8 @@ The Npcap installer itself elevates via UAC automatically — you don't need to 
 ### 2. Install the meter
 
 **[⬇ Download aion2t-dps-setup-1.1.24-x64.exe](https://raw.githubusercontent.com/Grachy/aion2t-dps-meter/master/docs/aion2t-dps-setup-1.1.24-x64.exe)**
+
+Mirrors, if the direct link is blocked for you: [Mega](https://mega.nz/file/nCgXgZYA#Vl-FGlhJJycE37yAvb4r5yH5AWxYnBRakRSx6P7Zr2w) · [Yandex Disk](https://disk.yandex.com/d/tcnOnfT6HGP5Yg)
 
 1. Download the installer above
 2. Run it — if Windows SmartScreen appears, click **More info → Run anyway**
@@ -117,7 +121,9 @@ A: Click **More info → Run anyway**. No paid code-signing certificate yet.
 
 Лёгкий прозрачный оверлей, который читает сетевые пакеты Aion 2 и показывает **урон в реальном времени** для каждого участника пати — без модификации игровых файлов и без инъекций кода.
 
-**[⬇ Скачать v1.1.24](https://disk.yandex.com/d/Lgr1MgBP_iFbDw)**
+**[⬇ Скачать v1.1.24](https://disk.yandex.com/d/tcnOnfT6HGP5Yg)**
+
+Зеркала: [Mega](https://mega.nz/file/nCgXgZYA#Vl-FGlhJJycE37yAvb4r5yH5AWxYnBRakRSx6P7Zr2w) · [Яндекс.Диск](https://disk.yandex.com/d/tcnOnfT6HGP5Yg)
 
 ### Возможности
 
