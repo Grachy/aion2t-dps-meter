@@ -3,11 +3,11 @@
   <h1>aion2t.com DPS Meter</h1>
   <p>Real-time DPS overlay for <strong>Aion 2</strong> (PC client)</p>
 
-  [![Version](https://img.shields.io/badge/version-1.1.23-blue)](#download)
+  [![Version](https://img.shields.io/badge/version-1.1.24-blue)](#download)
   [![Platform](https://img.shields.io/badge/platform-Windows%2010%2F11%20x64-lightgrey)](#download)
   [![Website](https://img.shields.io/badge/website-aion2t.com%2Fdps--meter-orange)](https://aion2t.com/dps-meter)
 
-  [**⬇ Download v1.1.23**](https://raw.githubusercontent.com/Grachy/aion2t-dps-meter/master/docs/aion2t-dps-setup-1.1.23-x64.exe) · [Website](https://aion2t.com/dps-meter) · [Report a Bug](https://github.com/Grachy/aion2t-dps-meter/issues)
+  [**⬇ Download v1.1.24**](https://raw.githubusercontent.com/Grachy/aion2t-dps-meter/master/docs/aion2t-dps-setup-1.1.24-x64.exe) · [Website](https://aion2t.com/dps-meter) · [Report a Bug](https://github.com/Grachy/aion2t-dps-meter/issues)
 
   ---
 
@@ -58,7 +58,7 @@ The Npcap installer itself elevates via UAC automatically — you don't need to 
 
 ### 2. Install the meter
 
-**[⬇ Download aion2t-dps-setup-1.1.23-x64.exe](https://raw.githubusercontent.com/Grachy/aion2t-dps-meter/master/docs/aion2t-dps-setup-1.1.23-x64.exe)**
+**[⬇ Download aion2t-dps-setup-1.1.24-x64.exe](https://raw.githubusercontent.com/Grachy/aion2t-dps-meter/master/docs/aion2t-dps-setup-1.1.24-x64.exe)**
 
 1. Download the installer above
 2. Run it — if Windows SmartScreen appears, click **More info → Run anyway**
@@ -80,14 +80,17 @@ The Npcap installer itself elevates via UAC automatically — you don't need to 
 | `Ctrl+R` | Reset all DPS data |
 | Drag window edge | Resize overlay |
 
-## What's New in 1.1.23
+## What's New in 1.1.24
 
 ### Fixes
 
-- **Zone-entry data no longer lost** — the large data burst sent when entering a dungeon (your character, party roster, Genus/pets/wings) could be shredded by the meter's stream reassembly, which was the root cause of "owner sometimes not detected" and partial collection data. Large fragmented frames are now reassembled correctly.
-- **Owner detection overhauled** — your character is identified reliably even when the zone snapshot arrives late or the game recycles entity ids: the meter re-anchors by your class from the party roster, fingerprints your self-buff bar by distinct skills instead of bar slots, no longer needs combat traffic to resolve the owner, and a stale cached identity from a previous session can no longer take over your row.
-- **No more duplicate uploads** — an internal soft reset no longer forgets which bosses were already uploaded, so killed bosses aren't re-sent to the site after your character re-binds.
-- **No uploads without you** — a fight is only uploaded when your own named row is present in it, preventing entries without an owner from reaching your history.
+- **Missing party member** — a player whose entity id was very small (under 100) was skipped by the damage and buff parsers, so a full party could show up one row short.
+- **Crash on boss overkill** — a boss reporting below-zero remaining HP overflowed a 32-bit conversion and took down the packet assembler. The kill went undetected and the fight was never uploaded.
+- **Boss from the previous zone stayed selected** — after changing zone the old boss could remain the current target; a new attempt is now recognised from the boss's own HP.
+- **Phantom extra player** — an invisible skill-effect actor carrying a real-looking nickname was counted as an extra party member.
+- **Names bound to the wrong entity** — a name found far from its entity id in a spawn packet is now accepted only when a valid class code follows it.
+- **Boss recognition rebuilt from the game client** — the NPC catalog is now generated from the client's own data instead of a third-party list. New bosses are recognised (Tiere, Thamon and Vakron on Bakron Island), Draupnir's first boss Afflicted Bakarma is now detected in every difficulty instead of only the second boss, 2,600 NPCs were added, and stale entries that made ordinary monsters read as bosses were removed.
+- **Debug log keeps its previous generation** — the log used to erase itself entirely once it hit its size cap, which repeatedly destroyed the very moment a bug report needed.
 
 
 ## FAQ
@@ -114,7 +117,7 @@ A: Click **More info → Run anyway**. No paid code-signing certificate yet.
 
 Лёгкий прозрачный оверлей, который читает сетевые пакеты Aion 2 и показывает **урон в реальном времени** для каждого участника пати — без модификации игровых файлов и без инъекций кода.
 
-**[⬇ Скачать v1.1.23](https://disk.yandex.com/d/Lgr1MgBP_iFbDw)**
+**[⬇ Скачать v1.1.24](https://disk.yandex.com/d/Lgr1MgBP_iFbDw)**
 
 ### Возможности
 
@@ -156,7 +159,7 @@ A: Click **More info → Run anyway**. No paid code-signing certificate yet.
 
 Ein leichtes transparentes Overlay, das Aion-2-Netzwerkpakete liest und den **Schaden in Echtzeit** für alle Gruppenmitglieder anzeigt — ohne Spielmodifikation, ohne Code-Injection.
 
-**[⬇ Download v1.1.23](https://raw.githubusercontent.com/Grachy/aion2t-dps-meter/master/docs/aion2t-dps-setup-1.1.23-x64.exe)**
+**[⬇ Download v1.1.24](https://raw.githubusercontent.com/Grachy/aion2t-dps-meter/master/docs/aion2t-dps-setup-1.1.24-x64.exe)**
 
 ### Funktionen
 
@@ -190,7 +193,7 @@ Ein leichtes transparentes Overlay, das Aion-2-Netzwerkpakete liest und den **Sc
 
 Un overlay transparent léger qui lit les paquets réseau d'Aion 2 et affiche les **DPS en temps réel** pour chaque membre du groupe — sans modifier les fichiers du jeu, sans injection de code.
 
-**[⬇ Télécharger v1.1.23](https://raw.githubusercontent.com/Grachy/aion2t-dps-meter/master/docs/aion2t-dps-setup-1.1.23-x64.exe)**
+**[⬇ Télécharger v1.1.24](https://raw.githubusercontent.com/Grachy/aion2t-dps-meter/master/docs/aion2t-dps-setup-1.1.24-x64.exe)**
 
 > ⚠️ **Prérequis : installez [Npcap](https://npcap.com/#download)** en cochant « Install Npcap in WinPcap API-compatible Mode » — sinon le meter ne peut pas capturer les paquets.
 
@@ -219,7 +222,7 @@ Un overlay transparent léger qui lit les paquets réseau d'Aion 2 et affiche le
 
 Un overlay transparente ligero que lee los paquetes de red de Aion 2 y muestra el **DPS en tiempo real** para cada miembro del grupo — sin modificar archivos del juego, sin inyección de código.
 
-**[⬇ Descargar v1.1.23](https://raw.githubusercontent.com/Grachy/aion2t-dps-meter/master/docs/aion2t-dps-setup-1.1.23-x64.exe)**
+**[⬇ Descargar v1.1.24](https://raw.githubusercontent.com/Grachy/aion2t-dps-meter/master/docs/aion2t-dps-setup-1.1.24-x64.exe)**
 
 > ⚠️ **Requisito: instala [Npcap](https://npcap.com/#download)** marcando «Install Npcap in WinPcap API-compatible Mode» — sin él el meter no puede capturar paquetes.
 
@@ -248,7 +251,7 @@ Un overlay transparente ligero que lee los paquetes de red de Aion 2 y muestra e
 
 Um overlay transparente leve que lê os pacotes de rede do Aion 2 e exibe o **DPS em tempo real** para cada membro do grupo — sem modificar arquivos do jogo, sem injeção de código.
 
-**[⬇ Baixar v1.1.23](https://raw.githubusercontent.com/Grachy/aion2t-dps-meter/master/docs/aion2t-dps-setup-1.1.23-x64.exe)**
+**[⬇ Baixar v1.1.24](https://raw.githubusercontent.com/Grachy/aion2t-dps-meter/master/docs/aion2t-dps-setup-1.1.24-x64.exe)**
 
 > ⚠️ **Pré-requisito: instale o [Npcap](https://npcap.com/#download)** marcando "Install Npcap in WinPcap API-compatible Mode" — sem ele o meter não captura pacotes.
 
@@ -277,7 +280,7 @@ Um overlay transparente leve que lê os pacotes de rede do Aion 2 e exibe o **DP
 
 Aion 2のネットワークパケットを読み取り、パーティ全員の**リアルタイムDPS**を表示する軽量透明オーバーレイ — ゲームファイルの変更なし、コードインジェクションなし。
 
-**[⬇ ダウンロード v1.1.23](https://raw.githubusercontent.com/Grachy/aion2t-dps-meter/master/docs/aion2t-dps-setup-1.1.23-x64.exe)**
+**[⬇ ダウンロード v1.1.24](https://raw.githubusercontent.com/Grachy/aion2t-dps-meter/master/docs/aion2t-dps-setup-1.1.24-x64.exe)**
 
 > ⚠️ **前提条件：[Npcap](https://npcap.com/#download) をインストール**してください（インストール時に「Install Npcap in WinPcap API-compatible Mode」にチェック）。これがないとパケットを取得できません。
 
@@ -306,7 +309,7 @@ Aion 2のネットワークパケットを読み取り、パーティ全員の**
 
 Aion 2의 네트워크 패킷을 읽어 파티 전원의 **실시간 DPS**를 표시하는 가벼운 투명 오버레이 — 게임 파일 수정 없음, 코드 주입 없음.
 
-**[⬇ 다운로드 v1.1.23](https://raw.githubusercontent.com/Grachy/aion2t-dps-meter/master/docs/aion2t-dps-setup-1.1.23-x64.exe)**
+**[⬇ 다운로드 v1.1.24](https://raw.githubusercontent.com/Grachy/aion2t-dps-meter/master/docs/aion2t-dps-setup-1.1.24-x64.exe)**
 
 > ⚠️ **필수: [Npcap](https://npcap.com/#download) 설치** — 설치 시 "Install Npcap in WinPcap API-compatible Mode"에 체크하세요. 없으면 패킷을 캡처할 수 없습니다.
 
@@ -335,7 +338,7 @@ Aion 2의 네트워크 패킷을 읽어 파티 전원의 **실시간 DPS**를 �
 
 一款轻量级透明覆盖工具，通过读取 Aion 2 网络数据包，实时显示队伍中每位成员的**DPS** — 不修改游戏文件，不注入代码。
 
-**[⬇ 下载 v1.1.23](https://raw.githubusercontent.com/Grachy/aion2t-dps-meter/master/docs/aion2t-dps-setup-1.1.23-x64.exe)**
+**[⬇ 下载 v1.1.24](https://raw.githubusercontent.com/Grachy/aion2t-dps-meter/master/docs/aion2t-dps-setup-1.1.24-x64.exe)**
 
 > ⚠️ **前置要求：安装 [Npcap](https://npcap.com/#download)**，安装时勾选 “Install Npcap in WinPcap API-compatible Mode”，否则无法捕获数据包。
 
@@ -364,7 +367,7 @@ Aion 2의 네트워크 패킷을 읽어 파티 전원의 **실시간 DPS**를 �
 
 一款輕量級透明覆蓋工具，透過讀取 Aion 2 網路封包，即時顯示隊伍中每位成員的**DPS** — 不修改遊戲檔案，不注入程式碼。
 
-**[⬇ 下載 v1.1.23](https://raw.githubusercontent.com/Grachy/aion2t-dps-meter/master/docs/aion2t-dps-setup-1.1.23-x64.exe)**
+**[⬇ 下載 v1.1.24](https://raw.githubusercontent.com/Grachy/aion2t-dps-meter/master/docs/aion2t-dps-setup-1.1.24-x64.exe)**
 
 > ⚠️ **前置需求：安裝 [Npcap](https://npcap.com/#download)**，安裝時勾選「Install Npcap in WinPcap API-compatible Mode」，否則無法擷取封包。
 
