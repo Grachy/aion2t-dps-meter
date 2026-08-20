@@ -1,5 +1,5 @@
 {
   "version": "1.1.26",
-  "url": "https://disk.yandex.com/d/nlsrzwLpWP3Htg",
+  "url": "https://disk.yandex.com/d/j8s14qOkMDyqPQ",
   "notes": "A boss the party wiped on and pulled again kept its name only on the first attempt: the retry's fresh entity was refused the boss identity because the previous attempt's entity still held it - a wipe leaves that one neither dead nor finished - so the later attempts ran as \"Boss #12345\" and the kill that ended them uploaded to the site with no boss name. On a PC that had never captured a character before, the pieces of the login data (wings in one, genus and pets in another) overwrote each other instead of merging, because merging only began once the character was identified milliseconds later - typically costing the whole wing roster. Behind a ping reducer the game's ordinary HTTP requests share the local port the game stream uses and were being read as game frames. From the 19 August client patch: Gladiator's reworked Ruinous Blow is named again (the patch removed its charge-up and moved its hits onto new skill codes), plus two more skill names, one buff name, two buff icons and seven corrected NPC names."
 }

@@ -9,7 +9,7 @@
 
   [**⬇ Download v1.1.26**](https://raw.githubusercontent.com/Grachy/aion2t-dps-meter/master/docs/aion2t-dps-setup-1.1.26-x64.exe) · [Website](https://aion2t.com/dps-meter) · [Report a Bug](https://github.com/Grachy/aion2t-dps-meter/issues)
 
-  Mirrors: [Mega](https://mega.nz/file/nHZRwSZT#ZhFekajRitKFxQ3jC6CXnYSPQtoTxJogzsTYUhpDZEI) · [Yandex Disk](https://disk.yandex.com/d/nlsrzwLpWP3Htg)
+  Mirrors: [Mega](https://mega.nz/file/STxjTRZA#PDWrIKe6kiNXV5kFDLzjY2a519CwTIWtAuzj6IeSscg) · [Yandex Disk](https://disk.yandex.com/d/j8s14qOkMDyqPQ)
 
   ---
 
@@ -62,7 +62,7 @@ The Npcap installer itself elevates via UAC automatically — you don't need to 
 
 **[⬇ Download aion2t-dps-setup-1.1.26-x64.exe](https://raw.githubusercontent.com/Grachy/aion2t-dps-meter/master/docs/aion2t-dps-setup-1.1.26-x64.exe)**
 
-Mirrors, if the direct link is blocked for you: [Mega](https://mega.nz/file/nHZRwSZT#ZhFekajRitKFxQ3jC6CXnYSPQtoTxJogzsTYUhpDZEI) · [Yandex Disk](https://disk.yandex.com/d/nlsrzwLpWP3Htg)
+Mirrors, if the direct link is blocked for you: [Mega](https://mega.nz/file/STxjTRZA#PDWrIKe6kiNXV5kFDLzjY2a519CwTIWtAuzj6IeSscg) · [Yandex Disk](https://disk.yandex.com/d/j8s14qOkMDyqPQ)
 
 1. Download the installer above
 2. Run it — if Windows SmartScreen appears, click **More info → Run anyway**
@@ -120,9 +120,9 @@ A: Click **More info → Run anyway**. No paid code-signing certificate yet.
 
 Лёгкий прозрачный оверлей, который читает сетевые пакеты Aion 2 и показывает **урон в реальном времени** для каждого участника пати — без модификации игровых файлов и без инъекций кода.
 
-**[⬇ Скачать v1.1.26](https://disk.yandex.com/d/nlsrzwLpWP3Htg)**
+**[⬇ Скачать v1.1.26](https://disk.yandex.com/d/j8s14qOkMDyqPQ)**
 
-Зеркала: [Mega](https://mega.nz/file/nHZRwSZT#ZhFekajRitKFxQ3jC6CXnYSPQtoTxJogzsTYUhpDZEI) · [Яндекс.Диск](https://disk.yandex.com/d/nlsrzwLpWP3Htg)
+Зеркала: [Mega](https://mega.nz/file/STxjTRZA#PDWrIKe6kiNXV5kFDLzjY2a519CwTIWtAuzj6IeSscg) · [Яндекс.Диск](https://disk.yandex.com/d/j8s14qOkMDyqPQ)
 
 ### Возможности
 
