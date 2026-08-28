@@ -3,11 +3,11 @@
   <h1>aion2t.com DPS Meter</h1>
   <p>Real-time DPS overlay for <strong>Aion 2</strong> (PC client)</p>
 
-  [![Version](https://img.shields.io/badge/version-1.1.26-blue)](#download)
+  [![Version](https://img.shields.io/badge/version-1.1.27-blue)](#download)
   [![Platform](https://img.shields.io/badge/platform-Windows%2010%2F11%20x64-lightgrey)](#download)
   [![Website](https://img.shields.io/badge/website-aion2t.com%2Fdps--meter-orange)](https://aion2t.com/dps-meter)
 
-  [**⬇ Download v1.1.26**](https://raw.githubusercontent.com/Grachy/aion2t-dps-meter/master/docs/aion2t-dps-setup-1.1.26-x64.exe) · [Website](https://aion2t.com/dps-meter) · [Report a Bug](https://github.com/Grachy/aion2t-dps-meter/issues)
+  [**⬇ Download v1.1.27**](https://raw.githubusercontent.com/Grachy/aion2t-dps-meter/master/docs/aion2t-dps-setup-1.1.27-x64.exe) · [Website](https://aion2t.com/dps-meter) · [Report a Bug](https://github.com/Grachy/aion2t-dps-meter/issues)
 
   Mirrors: [Mega](https://mega.nz/file/STxjTRZA#PDWrIKe6kiNXV5kFDLzjY2a519CwTIWtAuzj6IeSscg) · [Yandex Disk](https://disk.yandex.com/d/j8s14qOkMDyqPQ)
 
@@ -60,7 +60,7 @@ The Npcap installer itself elevates via UAC automatically — you don't need to 
 
 ### 2. Install the meter
 
-**[⬇ Download aion2t-dps-setup-1.1.26-x64.exe](https://raw.githubusercontent.com/Grachy/aion2t-dps-meter/master/docs/aion2t-dps-setup-1.1.26-x64.exe)**
+**[⬇ Download aion2t-dps-setup-1.1.27-x64.exe](https://raw.githubusercontent.com/Grachy/aion2t-dps-meter/master/docs/aion2t-dps-setup-1.1.27-x64.exe)**
 
 Mirrors, if the direct link is blocked for you: [Mega](https://mega.nz/file/STxjTRZA#PDWrIKe6kiNXV5kFDLzjY2a519CwTIWtAuzj6IeSscg) · [Yandex Disk](https://disk.yandex.com/d/j8s14qOkMDyqPQ)
 
@@ -84,17 +84,16 @@ Mirrors, if the direct link is blocked for you: [Mega](https://mega.nz/file/STxj
 | `Ctrl+R` | Reset all DPS data |
 | Drag window edge | Resize overlay |
 
-## What's New in 1.1.26
+## What's New in 1.1.27
 
 ### Fixes
 
-- **A boss you wiped on kept its name only on the first attempt** — when a party wipes and pulls again, the boss comes back as a new entity, and the meter refused to hand it the boss's identity because the previous attempt's entity still held it. A wipe leaves that one neither dead nor finished, so it blocked the retry for the rest of the run: the second and third attempts ran as "Boss #12345", and the kill that finally ended them was uploaded to the site with no boss name at all.
-- **The first character scan no longer overwrites itself** — the login data arrives in several pieces, wings in one and genus and pets in another, and they are meant to be merged into one set. On a PC that had never captured a character before, merging only started once the character was identified, which happens milliseconds after the last piece arrives — so each piece replaced the one before it and only the last survived, usually costing you the entire wing roster.
-- **Ping reducers no longer feed web traffic to the packet parser** — behind an accelerator the game's ordinary HTTP requests travel over the same local port as the game stream itself. Those responses were being read as game frames, which buried the debug log in noise and left one parser behind per connection.
+- **Your own row no longer shows up as a bare number** — after entering a dungeon the meter often could not tell which row was yours: it showed the raw entity id instead of your character name and saved the fight to history that way. It was not random either — the first two bosses of every run went in like that, and your name appeared only from the third one on, when the game happened to re-send the character packet. Fight data deliberately survives a zone change, so that a boss you pull again keeps its numbers; but the test for "is the bound owner still fighting?" counted that leftover damage, so an id stranded in the previous run read as alive for the whole of the next one — and every path that re-anchors the owner treats a live binding as final, including the diagnostic that exists to report this exact failure. Two smaller holes on the same path were closed with it: your buff bar, the strongest fingerprint the meter has, arrives in one burst at zone entry seconds before your first hit, so the single attempt it got was spent before that entity had done anything; and when your own name reappeared on your new entity, it was mistaken for a party member's name landing on your row and refused instead of being followed.
+- **A Cleric party buff no longer counts as a debuff** — buff and debuff classification comes from the client, and an effect missing from that table is guessed from the whole skill family. Earth's Blessing sits in a family whose base entry is a debuff, so a party buff was listed among player debuffs. The classification now comes from the client for 682 more effects, 228 of which were being guessed the same way.
 
-### Data (client patch of 19 August)
+### Data (client patch of 25 August)
 
-- Gladiator's reworked **Ruinous Blow** is named again: the patch removed its charge-up and moved its hits onto new skill codes, which the meter would otherwise show as a bare number. Two more skill names, one buff name and two buff icons were added, and seven NPC names the patch rewrote were corrected. No boss ids changed.
+- 27 new skill names — Ranger's **Deadshot**, Cleric's **Earth's Blessing**, Chanter's **Spinning Strike**, Fighter's **Ferocity** and **Pulverize**, and **Judgment** — plus 9 buff names and icons, 6 new wings and 4 new creatures. A creature the meter does not know contributes nothing to your pet bonuses, silently. Seven NPC names the patch rewrote were corrected, and no boss ids changed.
 
 ## FAQ
 
@@ -120,7 +119,7 @@ A: Click **More info → Run anyway**. No paid code-signing certificate yet.
 
 Лёгкий прозрачный оверлей, который читает сетевые пакеты Aion 2 и показывает **урон в реальном времени** для каждого участника пати — без модификации игровых файлов и без инъекций кода.
 
-**[⬇ Скачать v1.1.26](https://disk.yandex.com/d/j8s14qOkMDyqPQ)**
+**[⬇ Скачать v1.1.27](https://disk.yandex.com/d/j8s14qOkMDyqPQ)**
 
 Зеркала: [Mega](https://mega.nz/file/STxjTRZA#PDWrIKe6kiNXV5kFDLzjY2a519CwTIWtAuzj6IeSscg) · [Яндекс.Диск](https://disk.yandex.com/d/j8s14qOkMDyqPQ)
 
@@ -164,7 +163,7 @@ A: Click **More info → Run anyway**. No paid code-signing certificate yet.
 
 Ein leichtes transparentes Overlay, das Aion-2-Netzwerkpakete liest und den **Schaden in Echtzeit** für alle Gruppenmitglieder anzeigt — ohne Spielmodifikation, ohne Code-Injection.
 
-**[⬇ Download v1.1.26](https://raw.githubusercontent.com/Grachy/aion2t-dps-meter/master/docs/aion2t-dps-setup-1.1.26-x64.exe)**
+**[⬇ Download v1.1.27](https://raw.githubusercontent.com/Grachy/aion2t-dps-meter/master/docs/aion2t-dps-setup-1.1.27-x64.exe)**
 
 ### Funktionen
 
@@ -198,7 +197,7 @@ Ein leichtes transparentes Overlay, das Aion-2-Netzwerkpakete liest und den **Sc
 
 Un overlay transparent léger qui lit les paquets réseau d'Aion 2 et affiche les **DPS en temps réel** pour chaque membre du groupe — sans modifier les fichiers du jeu, sans injection de code.
 
-**[⬇ Télécharger v1.1.26](https://raw.githubusercontent.com/Grachy/aion2t-dps-meter/master/docs/aion2t-dps-setup-1.1.26-x64.exe)**
+**[⬇ Télécharger v1.1.27](https://raw.githubusercontent.com/Grachy/aion2t-dps-meter/master/docs/aion2t-dps-setup-1.1.27-x64.exe)**
 
 > ⚠️ **Prérequis : installez [Npcap](https://npcap.com/#download)** en cochant « Install Npcap in WinPcap API-compatible Mode » — sinon le meter ne peut pas capturer les paquets.
 
@@ -227,7 +226,7 @@ Un overlay transparent léger qui lit les paquets réseau d'Aion 2 et affiche le
 
 Un overlay transparente ligero que lee los paquetes de red de Aion 2 y muestra el **DPS en tiempo real** para cada miembro del grupo — sin modificar archivos del juego, sin inyección de código.
 
-**[⬇ Descargar v1.1.26](https://raw.githubusercontent.com/Grachy/aion2t-dps-meter/master/docs/aion2t-dps-setup-1.1.26-x64.exe)**
+**[⬇ Descargar v1.1.27](https://raw.githubusercontent.com/Grachy/aion2t-dps-meter/master/docs/aion2t-dps-setup-1.1.27-x64.exe)**
 
 > ⚠️ **Requisito: instala [Npcap](https://npcap.com/#download)** marcando «Install Npcap in WinPcap API-compatible Mode» — sin él el meter no puede capturar paquetes.
 
@@ -256,7 +255,7 @@ Un overlay transparente ligero que lee los paquetes de red de Aion 2 y muestra e
 
 Um overlay transparente leve que lê os pacotes de rede do Aion 2 e exibe o **DPS em tempo real** para cada membro do grupo — sem modificar arquivos do jogo, sem injeção de código.
 
-**[⬇ Baixar v1.1.26](https://raw.githubusercontent.com/Grachy/aion2t-dps-meter/master/docs/aion2t-dps-setup-1.1.26-x64.exe)**
+**[⬇ Baixar v1.1.27](https://raw.githubusercontent.com/Grachy/aion2t-dps-meter/master/docs/aion2t-dps-setup-1.1.27-x64.exe)**
 
 > ⚠️ **Pré-requisito: instale o [Npcap](https://npcap.com/#download)** marcando "Install Npcap in WinPcap API-compatible Mode" — sem ele o meter não captura pacotes.
 
@@ -285,7 +284,7 @@ Um overlay transparente leve que lê os pacotes de rede do Aion 2 e exibe o **DP
 
 Aion 2のネットワークパケットを読み取り、パーティ全員の**リアルタイムDPS**を表示する軽量透明オーバーレイ — ゲームファイルの変更なし、コードインジェクションなし。
 
-**[⬇ ダウンロード v1.1.26](https://raw.githubusercontent.com/Grachy/aion2t-dps-meter/master/docs/aion2t-dps-setup-1.1.26-x64.exe)**
+**[⬇ ダウンロード v1.1.27](https://raw.githubusercontent.com/Grachy/aion2t-dps-meter/master/docs/aion2t-dps-setup-1.1.27-x64.exe)**
 
 > ⚠️ **前提条件：[Npcap](https://npcap.com/#download) をインストール**してください（インストール時に「Install Npcap in WinPcap API-compatible Mode」にチェック）。これがないとパケットを取得できません。
 
@@ -314,7 +313,7 @@ Aion 2のネットワークパケットを読み取り、パーティ全員の**
 
 Aion 2의 네트워크 패킷을 읽어 파티 전원의 **실시간 DPS**를 표시하는 가벼운 투명 오버레이 — 게임 파일 수정 없음, 코드 주입 없음.
 
-**[⬇ 다운로드 v1.1.26](https://raw.githubusercontent.com/Grachy/aion2t-dps-meter/master/docs/aion2t-dps-setup-1.1.26-x64.exe)**
+**[⬇ 다운로드 v1.1.27](https://raw.githubusercontent.com/Grachy/aion2t-dps-meter/master/docs/aion2t-dps-setup-1.1.27-x64.exe)**
 
 > ⚠️ **필수: [Npcap](https://npcap.com/#download) 설치** — 설치 시 "Install Npcap in WinPcap API-compatible Mode"에 체크하세요. 없으면 패킷을 캡처할 수 없습니다.
 
@@ -343,7 +342,7 @@ Aion 2의 네트워크 패킷을 읽어 파티 전원의 **실시간 DPS**를 �
 
 一款轻量级透明覆盖工具，通过读取 Aion 2 网络数据包，实时显示队伍中每位成员的**DPS** — 不修改游戏文件，不注入代码。
 
-**[⬇ 下载 v1.1.26](https://raw.githubusercontent.com/Grachy/aion2t-dps-meter/master/docs/aion2t-dps-setup-1.1.26-x64.exe)**
+**[⬇ 下载 v1.1.27](https://raw.githubusercontent.com/Grachy/aion2t-dps-meter/master/docs/aion2t-dps-setup-1.1.27-x64.exe)**
 
 > ⚠️ **前置要求：安装 [Npcap](https://npcap.com/#download)**，安装时勾选 “Install Npcap in WinPcap API-compatible Mode”，否则无法捕获数据包。
 
@@ -372,7 +371,7 @@ Aion 2의 네트워크 패킷을 읽어 파티 전원의 **실시간 DPS**를 �
 
 一款輕量級透明覆蓋工具，透過讀取 Aion 2 網路封包，即時顯示隊伍中每位成員的**DPS** — 不修改遊戲檔案，不注入程式碼。
 
-**[⬇ 下載 v1.1.26](https://raw.githubusercontent.com/Grachy/aion2t-dps-meter/master/docs/aion2t-dps-setup-1.1.26-x64.exe)**
+**[⬇ 下載 v1.1.27](https://raw.githubusercontent.com/Grachy/aion2t-dps-meter/master/docs/aion2t-dps-setup-1.1.27-x64.exe)**
 
 > ⚠️ **前置需求：安裝 [Npcap](https://npcap.com/#download)**，安裝時勾選「Install Npcap in WinPcap API-compatible Mode」，否則無法擷取封包。
 
