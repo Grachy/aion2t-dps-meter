@@ -1,0 +1,12 @@
+
+--------------------------------------------------------------------------------
+2026-09-13 — PUBLISH 1.1.29 (не запушено)
+--------------------------------------------------------------------------------
+docs/aion2t-dps-setup-1.1.29-x64.exe — 10 367 478 байт,
+sha256 d48d43a9a6b7626693bdf750d304d160d20c8183ed5788c489f4bed9c0ee70a3.
+README.md: все 1.1.28 → 1.1.29, раздел «What's New in 1.1.29» (5 фиксов + 2 новых),
+зеркала Mega OWQQEA5Y / Яндекс whqjSGWFWdpnPg во всех локалях.
+docs/index.html: версия + зеркала. version.json: version/url(Яндекс)/notes.
+latest-v2.json: version/msiUrl/sha256 новой сборки.
+ОСТАЛОСЬ ЮЗЕРУ: push master; затем version.json на сервере aion2t.com (копия
+лежит в репо сайта web2/public/api/dps/version.json — деплой сайта её и отдаст).
