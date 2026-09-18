@@ -28,3 +28,4 @@ docs/index.html: версия ×4. version.json: version/notes, url = raw GitHub
 docs/aion2t-dps-setup-1.1.30-x64.exe лежит неотслеживаемым, не публиковался.
 ОСТАЛОСЬ ЮЗЕРУ: залить зеркала, push master, version.json на сервере aion2t.com
 (копия в репо сайта web2/public/api/dps/version.json).
+  2026-09-19: Яндекс-зеркало перебито на 1.1.31 (disk.yandex.com/d/0X-G86DhpcifsQ) в README (4), index.html (2), version.json url. Mega — ссылки на 1.1.31 нет, осталась 1.1.29.
