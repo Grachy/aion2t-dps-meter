@@ -1,5 +1,5 @@
 {
   "version": "1.1.32",
-  "url": "https://disk.yandex.com/d/0X-G86DhpcifsQ",
+  "url": "https://disk.yandex.com/d/8VnaAJsoRyoLGQ",
   "notes": "PvP: an opponent's hits on you before your first swing were lost; PvP mode listed the whole battlefield instead of you and your party; your own skills could show as the target's cooldowns. Effects are named and iconed by their own id (no more \"Basic Attack\" for Insignia), 244 effect icons added. All ten languages complete, and boss/skill/effect/class/event names now come from the client's own localization in every language. Premium status is verified for real and a failed check says so.\n\nNew: Ally cooldowns panel (Premium) - pick a class and follow that party member's cooldowns whatever you target. Shared boss skill names: send the names you gave boss moves to aion2t.com and get everyone's, in your language. Boss skills in Settings show the game's name and the boss's name; any move can be renamed."
 }
