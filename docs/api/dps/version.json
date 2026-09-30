@@ -1,5 +1,5 @@
 {
   "version": "1.1.33",
-  "url": "https://disk.yandex.com/d/8VnaAJsoRyoLGQ",
+  "url": "https://disk.yandex.com/d/DlnRqPYjbLst4Q",
   "notes": "Control update for Global (EU) servers; nothing changes for Taiwan. Ping now works on Global: the server's ping packet there is not an echo of your clock, so ping is measured from your packets to the server's acknowledgement (smallest of the last 10 seconds) and saved into each fight's ping history. Fixed a rare parser crash on a creature-spawn packet shorter than its own header. The debug packet dump now records your outgoing packets too."
 }
