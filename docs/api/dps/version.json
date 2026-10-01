@@ -1,5 +1,5 @@
 {
-  "version": "1.1.33",
-  "url": "https://disk.yandex.com/d/DlnRqPYjbLst4Q",
-  "notes": "Control update for Global (EU) servers; nothing changes for Taiwan. Ping now works on Global: the server's ping packet there is not an echo of your clock, so ping is measured from your packets to the server's acknowledgement (smallest of the last 10 seconds) and saved into each fight's ping history. Fixed a rare parser crash on a creature-spawn packet shorter than its own header. The debug packet dump now records your outgoing packets too."
+  "version": "1.1.34",
+  "url": "https://raw.githubusercontent.com/Grachy/aion2t-dps-meter/master/docs/aion2t-dps-setup-1.1.34-x64.exe",
+  "notes": "Fixed an issue where the meter stayed empty on Global (EU) servers even though packet capture was working. The game is now detected directly by its AION2.exe process instead of its window title. This prevents Explorer folders or browser tabs from being mistaken for the game and removes the window-title requirement. Added capture and process diagnostics to help investigate connection problems."
 }
