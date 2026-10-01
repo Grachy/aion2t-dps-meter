@@ -1,5 +1,5 @@
 {
-  "version": "1.1.34",
-  "url": "https://raw.githubusercontent.com/Grachy/aion2t-dps-meter/master/docs/aion2t-dps-setup-1.1.34-x64.exe",
-  "notes": "Fixed an issue where the meter stayed empty on Global (EU) servers even though packet capture was working. The game is now detected directly by its AION2.exe process instead of its window title. This prevents Explorer folders or browser tabs from being mistaken for the game and removes the window-title requirement. Added capture and process diagnostics to help investigate connection problems."
+  "version": "1.1.35",
+  "url": "https://raw.githubusercontent.com/Grachy/aion2t-dps-meter/master/docs/aion2t-dps-setup-1.1.35-x64.exe",
+  "notes": "Fixed Global ping readings, including connections through VPN and accelerator proxies. Reduced capture overhead and improved reconnection handling. Fixed stale world-boss respawn timers. Added packet-loss diagnostics to help investigate missing or delayed damage."
 }
