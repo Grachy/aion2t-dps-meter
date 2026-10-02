@@ -34,3 +34,6 @@ docs/aion2t-dps-setup-1.1.30-x64.exe лежит неотслеживаемым, 
 Installer: docs/aion2t-dps-setup-1.1.35-x64.exe, 15324719 bytes; SHA256 90d1654a66df6a62f105ba71e50b7cf02a96340162b458201a2539dc73e55aac.
 Updated README, both HTML download pages, updater manifests and short English release notes.
 Existing Mega/Yandex mirrors still contain 1.1.33 and remain labelled accordingly.
+
+## SESSION: 2026-10-02 - Release 1.1.36 installer and notes
+Updated release repo with source commit ead7b50 installer built2026-10-02 19:50:58. docs/aion2t-dps-setup-1.1.36-x64.exe:15351910bytes, SHA2567ac4b1b62f3255487c8c51af1cf2548ccd7ddf0473ba4fe386257099366f1281, ProductVersion1.1.36. Updated both update manifests and README/download pages, added English docs/release-notes-1.1.36.md. Includes verified game-flow/ExitLag/reconnects, framing recovery, cached-name owner repair, Alt+Click/assist visibility/settings selections/stacks, removal of misleading alerts, EU uploads/debug diagnostics. Source144Rusttests passed/one ignored; live user validation still required. Recorded replay owner/all12reportedactor totals unchanged, extra4events/one target vs prior baseline remain unverified (source release notes). Existing mirrors still1.1.33 and accurately labelled. Local commit only; no push/GitHub Release/mirror or website update.

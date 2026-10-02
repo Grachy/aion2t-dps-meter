@@ -1,5 +1,5 @@
 {
-  "version": "1.1.35",
-  "url": "https://raw.githubusercontent.com/Grachy/aion2t-dps-meter/master/docs/aion2t-dps-setup-1.1.35-x64.exe",
-  "notes": "Fixed Global ping readings, including connections through VPN and accelerator proxies. Reduced capture overhead and improved reconnection handling. Fixed stale world-boss respawn timers. Added packet-loss diagnostics to help investigate missing or delayed damage."
+    "version":  "1.1.36",
+    "url":  "https://raw.githubusercontent.com/Grachy/aion2t-dps-meter/master/docs/aion2t-dps-setup-1.1.36-x64.exe",
+    "notes":  "Improved Global and ExitLag capture detection and reconnects. Fixed delayed damage updates and player binding. Fixed Alt+Click unlocking and Combat Assist visibility. Saved skill selections remain available in settings; buff and debuff icons now show stack counts. Removed misleading upload-failure and boss-disappearance alerts. Improved EU uploads and diagnostics."
 }

@@ -1,5 +1,5 @@
 {
-  "version": "1.1.35",
-  "msiUrl": "https://raw.githubusercontent.com/Grachy/aion2t-dps-meter/master/docs/aion2t-dps-setup-1.1.35-x64.exe",
-  "sha256": "90d1654a66df6a62f105ba71e50b7cf02a96340162b458201a2539dc73e55aac"
+    "version":  "1.1.36",
+    "msiUrl":  "https://raw.githubusercontent.com/Grachy/aion2t-dps-meter/master/docs/aion2t-dps-setup-1.1.36-x64.exe",
+    "sha256":  "7ac4b1b62f3255487c8c51af1cf2548ccd7ddf0473ba4fe386257099366f1281"
 }
