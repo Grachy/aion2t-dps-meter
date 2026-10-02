@@ -1,5 +1,5 @@
 {
     "version":  "1.1.36",
     "url":  "https://raw.githubusercontent.com/Grachy/aion2t-dps-meter/master/docs/aion2t-dps-setup-1.1.36-x64.exe",
-    "notes":  "Improved Global and ExitLag capture detection and reconnects. Fixed delayed damage updates and player binding. Fixed Alt+Click unlocking and Combat Assist visibility. Saved skill selections remain available in settings; buff and debuff icons now show stack counts. Removed misleading upload-failure and boss-disappearance alerts. Improved EU uploads and diagnostics."
+    "notes":  "Fixed a startup error that disabled meter controls and prevented DPS updates. Fixed missing or delayed DPS updates, incorrect player and class detection, numeric names and misattributed damage. Fixed unexpected fight resets, invalid boss HP, stale ping, buff/debuff tracking and stack counts. Fixed upload retries, duplicate submissions, Alt+Click unlocking, hidden Combat Assist panels and disappearing skill selections. Removed incorrect alerts and fixed adds/illusions being excluded by default in new settings."
 }
