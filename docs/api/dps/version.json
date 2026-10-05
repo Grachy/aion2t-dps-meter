@@ -1,5 +1,5 @@
 {
-    "version": "1.1.37",
-    "url": "https://raw.githubusercontent.com/Grachy/aion2t-dps-meter/master/docs/aion2t-dps-setup-1.1.37-x64.exe",
-    "notes": "Added OBS Browser source, team results copied as text with configurable Ctrl+Z and DPS/rDPS/HPS/total damage formats, optional CoGM uploads (off by default), and a PvP target Gear Score panel. Fixed final boss totals, Insignia stacks, Global latency, character-switch attribution, Combat Assist visibility and click-through, and unavailable Premium selections. Improved character-bound energy and boss timers; community schedules require the server update."
+    "version": "1.1.38",
+    "url": "https://raw.githubusercontent.com/Grachy/aion2t-dps-meter/master/docs/aion2t-dps-setup-1.1.38-x64.exe",
+    "notes": "Restored normal clicks and dragging for unlocked meter, Combat Assist and notification overlays without requiring Alt. Click-through now follows the explicit position lock. Fixed placement panels disappearing when meter settings had focus; unlocked empty panels show named frames for placement. Panels stay within the visible game window. Global ping with unsupported Npcap clock modes remains a known limitation."
 }

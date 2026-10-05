@@ -3,15 +3,15 @@
   <h1>aion2t.com DPS Meter</h1>
   <p>Real-time DPS overlay for <strong>Aion 2</strong> (PC client)</p>
 
-  [![Version](https://img.shields.io/badge/version-1.1.37-blue)](#download)
+  [![Version](https://img.shields.io/badge/version-1.1.38-blue)](#download)
   [![Platform](https://img.shields.io/badge/platform-Windows%2010%2F11%20x64-lightgrey)](#download)
   [![Website](https://img.shields.io/badge/website-aion2t.com%2Fdps--meter-orange)](https://aion2t.com/dps-meter)
 
-  [**⬇ Download v1.1.37**](https://raw.githubusercontent.com/Grachy/aion2t-dps-meter/master/docs/aion2t-dps-setup-1.1.37-x64.exe) · [Website](https://aion2t.com/dps-meter) · [Report a Bug](https://github.com/Grachy/aion2t-dps-meter/issues)
+  [**⬇ Download v1.1.38**](https://raw.githubusercontent.com/Grachy/aion2t-dps-meter/master/docs/aion2t-dps-setup-1.1.38-x64.exe) · [Website](https://aion2t.com/dps-meter) · [Report a Bug](https://github.com/Grachy/aion2t-dps-meter/issues)
 
   Mirrors: [Mega (1.1.33)](https://mega.nz/file/XXAABA5I#tkbwLJIuZguiNVIS3VhDyhgNMt1WhZYZ-e_YgDMa0-s) · [Yandex Disk (1.1.33)](https://disk.yandex.com/d/DlnRqPYjbLst4Q)
 
-  [Release notes for 1.1.37](docs/release-notes-1.1.37.md)
+  [Release notes for 1.1.38](docs/release-notes-1.1.38.md)
 
   ---
 
@@ -62,7 +62,7 @@ The Npcap installer itself elevates via UAC automatically — you don't need to 
 
 ### 2. Install the meter
 
-**[⬇ Download aion2t-dps-setup-1.1.37-x64.exe](https://raw.githubusercontent.com/Grachy/aion2t-dps-meter/master/docs/aion2t-dps-setup-1.1.37-x64.exe)**
+**[⬇ Download aion2t-dps-setup-1.1.38-x64.exe](https://raw.githubusercontent.com/Grachy/aion2t-dps-meter/master/docs/aion2t-dps-setup-1.1.38-x64.exe)**
 
 Mirrors, if the direct link is blocked for you: [Mega (1.1.33)](https://mega.nz/file/XXAABA5I#tkbwLJIuZguiNVIS3VhDyhgNMt1WhZYZ-e_YgDMa0-s) · [Yandex Disk (1.1.33)](https://disk.yandex.com/d/DlnRqPYjbLst4Q)
 
@@ -85,6 +85,14 @@ Mirrors, if the direct link is blocked for you: [Mega (1.1.33)](https://mega.nz/
 |--------|--------|
 | `Ctrl+R` | Reset all DPS data |
 | Drag window edge | Resize overlay |
+
+## What's New in 1.1.38
+
+- Restored normal clicks and dragging for unlocked meter, Combat Assist and notification panels, without Alt.
+- Click-through now follows the explicit position lock.
+- Fixed placement panels disappearing when the meter settings had focus.
+- Unlocked empty panels show named frames for placement; game bounds and minimized hiding remain enforced.
+- Known limitation: Global ping may remain unavailable with unsupported Npcap clock modes.
 
 ## What's New in 1.1.37
 
