@@ -1,5 +1,5 @@
 {
-    "version": "1.1.38",
-    "url": "https://raw.githubusercontent.com/Grachy/aion2t-dps-meter/master/docs/aion2t-dps-setup-1.1.38-x64.exe",
-    "notes": "Restored normal clicks and dragging for unlocked meter, Combat Assist and notification overlays without requiring Alt. Click-through now follows the explicit position lock. Fixed placement panels disappearing when meter settings had focus; unlocked empty panels show named frames for placement. Panels stay within the visible game window. Global ping with unsupported Npcap clock modes remains a known limitation."
+    "version": "1.1.39",
+    "url": "https://raw.githubusercontent.com/Grachy/aion2t-dps-meter/master/docs/aion2t-dps-setup-1.1.39-x64.exe",
+    "notes": "Optional configurable idle reset (off by default), installed 64-bit SAPI 5 voices and fixed voice previews. Screenshot copying on the header button with clipboard confirmation; text results remain on the configurable hotkey. Fixed cancelled idle resets, disappearing placement overlays, saved positions and invalid Focused Block charges. Improved long-session cooldown cleanup, Npcap ping compatibility and the world-boss timer button."
 }
