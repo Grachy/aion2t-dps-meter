@@ -1,5 +1,6 @@
 {
-    "version": "1.1.39",
-    "url": "https://raw.githubusercontent.com/Grachy/aion2t-dps-meter/master/docs/aion2t-dps-setup-1.1.39-x64.exe",
-    "notes": "Optional configurable idle reset (off by default), installed 64-bit SAPI 5 voices and fixed voice previews. Screenshot copying on the header button with clipboard confirmation; text results remain on the configurable hotkey. Fixed cancelled idle resets, disappearing placement overlays, saved positions and invalid Focused Block charges. Improved long-session cooldown cleanup, Npcap ping compatibility and the world-boss timer button."
+    "version": "1.1.40",
+    "url": "https://raw.githubusercontent.com/Grachy/aion2t-dps-meter/master/docs/aion2t-dps-setup-1.1.40-x64.exe",
+    "notes": "One-click in-app updates with installer checksum verification. Reorganized Settings into eight sections; added separate Controls, Integrations, and Diagnostics pages. Combat Assist can show boss casts and cooldowns together or separately. Locked-meter help now stays visible with Alt+click and the current hotkey; Alt+click unlock is fixed. Improved same-class party and Spiritmaster tracking, isolated personal buffs, corrected shared target Insignia stacks, and updated mixed-effect skill choices.",
+    "sha256": "47d56265156f74d202d5fc309363ba76271f059a00e4c81b2f62b6c095a51183"
 }

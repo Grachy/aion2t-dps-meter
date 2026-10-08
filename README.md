@@ -3,15 +3,15 @@
   <h1>aion2t.com DPS Meter</h1>
   <p>Real-time DPS overlay for <strong>Aion 2</strong> (PC client)</p>
 
-  [![Version](https://img.shields.io/badge/version-1.1.39-blue)](#download)
+  [![Version](https://img.shields.io/badge/version-1.1.40-blue)](#download)
   [![Platform](https://img.shields.io/badge/platform-Windows%2010%2F11%20x64-lightgrey)](#download)
   [![Website](https://img.shields.io/badge/website-aion2t.com%2Fdps--meter-orange)](https://aion2t.com/dps-meter)
 
-  [**⬇ Download v1.1.39**](https://raw.githubusercontent.com/Grachy/aion2t-dps-meter/master/docs/aion2t-dps-setup-1.1.39-x64.exe) · [Website](https://aion2t.com/dps-meter) · [Report a Bug](https://github.com/Grachy/aion2t-dps-meter/issues)
+  [**⬇ Download v1.1.40**](https://raw.githubusercontent.com/Grachy/aion2t-dps-meter/master/docs/aion2t-dps-setup-1.1.40-x64.exe) · [Website](https://aion2t.com/dps-meter) · [Report a Bug](https://github.com/Grachy/aion2t-dps-meter/issues)
 
   Mirrors: [Mega (1.1.33)](https://mega.nz/file/XXAABA5I#tkbwLJIuZguiNVIS3VhDyhgNMt1WhZYZ-e_YgDMa0-s) · [Yandex Disk (1.1.33)](https://disk.yandex.com/d/DlnRqPYjbLst4Q)
 
-  [Release notes for 1.1.39](docs/release-notes-1.1.39.md)
+  [Release notes for 1.1.40](docs/release-notes-1.1.40.md)
 
   ---
 
@@ -45,7 +45,7 @@ A lightweight transparent overlay that reads Aion 2 network packets and shows **
 - **Resizable** — drag any edge to fit your screen layout
 - **Hotkey reset** — `Ctrl+R` clears all DPS data and starts fresh
 - **10 languages** — English, Русский, Deutsch, Français, Español, Português, 日本語, 한국어, 简体中文, 繁體中文
-- **Auto-update** — the app notifies you when a new version is available
+- **One-click updates** — the app downloads and installs verified new versions
 
 ## Download & Install <a name="download"></a>
 
@@ -62,7 +62,7 @@ The Npcap installer itself elevates via UAC automatically — you don't need to 
 
 ### 2. Install the meter
 
-**[⬇ Download aion2t-dps-setup-1.1.39-x64.exe](https://raw.githubusercontent.com/Grachy/aion2t-dps-meter/master/docs/aion2t-dps-setup-1.1.39-x64.exe)**
+**[⬇ Download aion2t-dps-setup-1.1.40-x64.exe](https://raw.githubusercontent.com/Grachy/aion2t-dps-meter/master/docs/aion2t-dps-setup-1.1.40-x64.exe)**
 
 Mirrors, if the direct link is blocked for you: [Mega (1.1.33)](https://mega.nz/file/XXAABA5I#tkbwLJIuZguiNVIS3VhDyhgNMt1WhZYZ-e_YgDMa0-s) · [Yandex Disk (1.1.33)](https://disk.yandex.com/d/DlnRqPYjbLst4Q)
 
@@ -85,6 +85,15 @@ Mirrors, if the direct link is blocked for you: [Mega (1.1.33)](https://mega.nz/
 |--------|--------|
 | `Ctrl+R` | Reset all DPS data |
 | Drag window edge | Resize overlay |
+
+## What's New in 1.1.40
+
+- Update the meter in-app with one click; verified releases install automatically.
+
+- Settings are organized into eight sections while keeping the familiar dark gray and green appearance.
+- Combat Assist can show boss casts, cooldowns, or both.
+- The locked meter always shows Alt+click and the current hotkey to unlock it; Alt+click now works reliably.
+- Improved same-class party tracking, personal buff ownership, shared Insignia stacks, and mixed-effect skill choices.
 
 ## What's New in 1.1.39
 
@@ -178,7 +187,7 @@ A: Click **More info → Run anyway**. No paid code-signing certificate yet.
 
 Лёгкий прозрачный оверлей, который читает сетевые пакеты Aion 2 и показывает **урон в реальном времени** для каждого участника пати — без модификации игровых файлов и без инъекций кода.
 
-**[⬇ Скачать v1.1.39](https://raw.githubusercontent.com/Grachy/aion2t-dps-meter/master/docs/aion2t-dps-setup-1.1.39-x64.exe)**
+**[⬇ Скачать v1.1.40](https://raw.githubusercontent.com/Grachy/aion2t-dps-meter/master/docs/aion2t-dps-setup-1.1.40-x64.exe)**
 
 Зеркала: [Mega (1.1.33)](https://mega.nz/file/XXAABA5I#tkbwLJIuZguiNVIS3VhDyhgNMt1WhZYZ-e_YgDMa0-s) · [Яндекс.Диск (1.1.33)](https://disk.yandex.com/d/DlnRqPYjbLst4Q)
 
@@ -222,7 +231,7 @@ A: Click **More info → Run anyway**. No paid code-signing certificate yet.
 
 Ein leichtes transparentes Overlay, das Aion-2-Netzwerkpakete liest und den **Schaden in Echtzeit** für alle Gruppenmitglieder anzeigt — ohne Spielmodifikation, ohne Code-Injection.
 
-**[⬇ Download v1.1.39](https://raw.githubusercontent.com/Grachy/aion2t-dps-meter/master/docs/aion2t-dps-setup-1.1.39-x64.exe)**
+**[⬇ Download v1.1.40](https://raw.githubusercontent.com/Grachy/aion2t-dps-meter/master/docs/aion2t-dps-setup-1.1.40-x64.exe)**
 
 ### Funktionen
 
@@ -256,7 +265,7 @@ Ein leichtes transparentes Overlay, das Aion-2-Netzwerkpakete liest und den **Sc
 
 Un overlay transparent léger qui lit les paquets réseau d'Aion 2 et affiche les **DPS en temps réel** pour chaque membre du groupe — sans modifier les fichiers du jeu, sans injection de code.
 
-**[⬇ Télécharger v1.1.39](https://raw.githubusercontent.com/Grachy/aion2t-dps-meter/master/docs/aion2t-dps-setup-1.1.39-x64.exe)**
+**[⬇ Télécharger v1.1.40](https://raw.githubusercontent.com/Grachy/aion2t-dps-meter/master/docs/aion2t-dps-setup-1.1.40-x64.exe)**
 
 > ⚠️ **Prérequis : installez [Npcap](https://npcap.com/#download)** en cochant « Install Npcap in WinPcap API-compatible Mode » — sinon le meter ne peut pas capturer les paquets.
 
@@ -285,7 +294,7 @@ Un overlay transparent léger qui lit les paquets réseau d'Aion 2 et affiche le
 
 Un overlay transparente ligero que lee los paquetes de red de Aion 2 y muestra el **DPS en tiempo real** para cada miembro del grupo — sin modificar archivos del juego, sin inyección de código.
 
-**[⬇ Descargar v1.1.39](https://raw.githubusercontent.com/Grachy/aion2t-dps-meter/master/docs/aion2t-dps-setup-1.1.39-x64.exe)**
+**[⬇ Descargar v1.1.40](https://raw.githubusercontent.com/Grachy/aion2t-dps-meter/master/docs/aion2t-dps-setup-1.1.40-x64.exe)**
 
 > ⚠️ **Requisito: instala [Npcap](https://npcap.com/#download)** marcando «Install Npcap in WinPcap API-compatible Mode» — sin él el meter no puede capturar paquetes.
 
@@ -314,7 +323,7 @@ Un overlay transparente ligero que lee los paquetes de red de Aion 2 y muestra e
 
 Um overlay transparente leve que lê os pacotes de rede do Aion 2 e exibe o **DPS em tempo real** para cada membro do grupo — sem modificar arquivos do jogo, sem injeção de código.
 
-**[⬇ Baixar v1.1.39](https://raw.githubusercontent.com/Grachy/aion2t-dps-meter/master/docs/aion2t-dps-setup-1.1.39-x64.exe)**
+**[⬇ Baixar v1.1.40](https://raw.githubusercontent.com/Grachy/aion2t-dps-meter/master/docs/aion2t-dps-setup-1.1.40-x64.exe)**
 
 > ⚠️ **Pré-requisito: instale o [Npcap](https://npcap.com/#download)** marcando "Install Npcap in WinPcap API-compatible Mode" — sem ele o meter não captura pacotes.
 
@@ -343,7 +352,7 @@ Um overlay transparente leve que lê os pacotes de rede do Aion 2 e exibe o **DP
 
 Aion 2のネットワークパケットを読み取り、パーティ全員の**リアルタイムDPS**を表示する軽量透明オーバーレイ — ゲームファイルの変更なし、コードインジェクションなし。
 
-**[⬇ ダウンロード v1.1.39](https://raw.githubusercontent.com/Grachy/aion2t-dps-meter/master/docs/aion2t-dps-setup-1.1.39-x64.exe)**
+**[⬇ ダウンロード v1.1.40](https://raw.githubusercontent.com/Grachy/aion2t-dps-meter/master/docs/aion2t-dps-setup-1.1.40-x64.exe)**
 
 > ⚠️ **前提条件：[Npcap](https://npcap.com/#download) をインストール**してください（インストール時に「Install Npcap in WinPcap API-compatible Mode」にチェック）。これがないとパケットを取得できません。
 
@@ -372,7 +381,7 @@ Aion 2のネットワークパケットを読み取り、パーティ全員の**
 
 Aion 2의 네트워크 패킷을 읽어 파티 전원의 **실시간 DPS**를 표시하는 가벼운 투명 오버레이 — 게임 파일 수정 없음, 코드 주입 없음.
 
-**[⬇ 다운로드 v1.1.39](https://raw.githubusercontent.com/Grachy/aion2t-dps-meter/master/docs/aion2t-dps-setup-1.1.39-x64.exe)**
+**[⬇ 다운로드 v1.1.40](https://raw.githubusercontent.com/Grachy/aion2t-dps-meter/master/docs/aion2t-dps-setup-1.1.40-x64.exe)**
 
 > ⚠️ **필수: [Npcap](https://npcap.com/#download) 설치** — 설치 시 "Install Npcap in WinPcap API-compatible Mode"에 체크하세요. 없으면 패킷을 캡처할 수 없습니다.
 
@@ -401,7 +410,7 @@ Aion 2의 네트워크 패킷을 읽어 파티 전원의 **실시간 DPS**를 �
 
 一款轻量级透明覆盖工具，通过读取 Aion 2 网络数据包，实时显示队伍中每位成员的**DPS** — 不修改游戏文件，不注入代码。
 
-**[⬇ 下载 v1.1.39](https://raw.githubusercontent.com/Grachy/aion2t-dps-meter/master/docs/aion2t-dps-setup-1.1.39-x64.exe)**
+**[⬇ 下载 v1.1.40](https://raw.githubusercontent.com/Grachy/aion2t-dps-meter/master/docs/aion2t-dps-setup-1.1.40-x64.exe)**
 
 > ⚠️ **前置要求：安装 [Npcap](https://npcap.com/#download)**，安装时勾选 “Install Npcap in WinPcap API-compatible Mode”，否则无法捕获数据包。
 
@@ -430,7 +439,7 @@ Aion 2의 네트워크 패킷을 읽어 파티 전원의 **실시간 DPS**를 �
 
 一款輕量級透明覆蓋工具，透過讀取 Aion 2 網路封包，即時顯示隊伍中每位成員的**DPS** — 不修改遊戲檔案，不注入程式碼。
 
-**[⬇ 下載 v1.1.39](https://raw.githubusercontent.com/Grachy/aion2t-dps-meter/master/docs/aion2t-dps-setup-1.1.39-x64.exe)**
+**[⬇ 下載 v1.1.40](https://raw.githubusercontent.com/Grachy/aion2t-dps-meter/master/docs/aion2t-dps-setup-1.1.40-x64.exe)**
 
 > ⚠️ **前置需求：安裝 [Npcap](https://npcap.com/#download)**，安裝時勾選「Install Npcap in WinPcap API-compatible Mode」，否則無法擷取封包。
 
