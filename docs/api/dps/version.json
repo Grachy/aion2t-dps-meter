@@ -1,6 +1,6 @@
 {
-    "version": "1.1.40",
-    "url": "https://raw.githubusercontent.com/Grachy/aion2t-dps-meter/master/docs/aion2t-dps-setup-1.1.40-x64.exe",
-    "notes": "One-click in-app updates with installer checksum verification. Reorganized Settings into eight sections; added separate Controls, Integrations, and Diagnostics pages. Combat Assist can show boss casts and cooldowns together or separately. Locked-meter help now stays visible with Alt+click and the current hotkey; Alt+click unlock is fixed. Improved same-class party and Spiritmaster tracking, isolated personal buffs, corrected shared target Insignia stacks, and updated mixed-effect skill choices. Settings now recover from an old small saved window size, and the meter has a compact frameless resize grip.",
-    "sha256": "03a3fef3f6b38c2adfa65fff85c381f81bde03813c89e12df2154ea072b4c827"
+    "version": "1.1.41",
+    "url": "https://raw.githubusercontent.com/Grachy/aion2t-dps-meter/master/docs/aion2t-dps-setup-1.1.41-x64.exe",
+    "notes": "Added a character checklist with clear character tabs, daily and weekly activities, detailed Arena, Battlefield, Daeva Pass and Command counters, and separate shop and Substance Morph limits. Added a pet farming map with per-character collection progress and a player-position marker. Fixed character-switch ownership, stale completion status after resets and partial Command totals. Improved VLAN packet capture, reused NPC identity handling and nickname resizing. The installer now checks for Npcap and links to the official download when it is missing.",
+    "sha256": "fc8d75f4365253a317392d5d67732efbfef22fb76cc636738445b5d850d34a34"
 }
