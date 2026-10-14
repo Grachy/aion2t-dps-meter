@@ -1,6 +1,6 @@
 {
-    "version": "1.1.41",
-    "url": "https://raw.githubusercontent.com/Grachy/aion2t-dps-meter/master/docs/aion2t-dps-setup-1.1.41-x64.exe",
-    "notes": "Added a character checklist with clear character tabs, daily and weekly activities, detailed Arena, Battlefield, Daeva Pass and Command counters, and separate shop and Substance Morph limits. Added a pet farming map with per-character collection progress and a player-position marker. Fixed character-switch ownership, stale completion status after resets and partial Command totals. Improved VLAN packet capture, reused NPC identity handling and nickname resizing. The installer now checks for Npcap and links to the official download when it is missing.",
-    "sha256": "fc8d75f4365253a317392d5d67732efbfef22fb76cc636738445b5d850d34a34"
+    "version": "1.1.42",
+    "url": "https://raw.githubusercontent.com/Grachy/aion2t-dps-meter/master/docs/aion2t-dps-setup-1.1.42-x64.exe",
+    "notes": "Added a movable tool dock, detached utility windows, compact checklist and activity overlays, and a player-centred pet mini-map with automatic soul tracking and cube/resource layers. Added AUTO combat selection, PvP team statistics and separate training history. Improved CP/GS identities, gathering-room slots and dungeon labels, wipe separation, map position updates and capture recovery. Added explicitly approximate Global rDPS from observed buffs and target debuffs. Fixed transparent dock captions, update-dialog sizing and footer readability. Crowded-world rankings still depend on damage amounts supplied by the server.",
+    "sha256": "b9f313e79bdb46b332cc39673bfeb3a568f7c6b64618d16f12be3c511b61c75a"
 }
