@@ -1,6 +1,6 @@
 {
-    "version": "1.1.42",
-    "url": "https://raw.githubusercontent.com/Grachy/aion2t-dps-meter/master/docs/aion2t-dps-setup-1.1.42-x64.exe",
-    "notes": "Added a movable tool dock, detached utility windows, compact checklist and activity overlays, and a player-centred pet mini-map with automatic soul tracking and cube/resource layers. Added AUTO combat selection, PvP team statistics and separate training history. Improved CP/GS identities, gathering-room slots and dungeon labels, wipe separation, map position updates and capture recovery. Added explicitly approximate Global rDPS from observed buffs and target debuffs. Fixed transparent dock captions, update-dialog sizing and footer readability. Crowded-world rankings still depend on damage amounts supplied by the server.",
-    "sha256": "b9f313e79bdb46b332cc39673bfeb3a568f7c6b64618d16f12be3c511b61c75a"
+    "version": "1.1.43",
+    "url": "https://raw.githubusercontent.com/Grachy/aion2t-dps-meter/master/docs/aion2t-dps-setup-1.1.43-x64.exe",
+    "notes": "Reduced background work and added a DPS-only performance profile, plus Premium custom feature switches. Improved the mini-map with one ALL toggle, four pet-type buttons, resource subtype filters, transparent soul progress and a configurable show/hide hotkey. Added checklist activity choices, footer sizing and compact boss rows. Improved verified party/raid grouping and crowded-PvP filtering. AUTO is now the default only when no mode was saved. Fixed update dialog sizing and silent-update restart. Full foreign damage rankings at crowded world bosses remain incomplete.",
+    "sha256": "c27c8a3ab196e35175997a91fd2e443d3fb6106c036e32e00789a8eaf7323933"
 }
