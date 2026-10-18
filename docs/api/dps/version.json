@@ -1,6 +1,6 @@
 {
-    "version": "1.1.44",
-    "url": "https://raw.githubusercontent.com/Grachy/aion2t-dps-meter/master/docs/aion2t-dps-setup-1.1.44-x64.exe",
-    "notes": "Compact PvP teams with collapsible sections and a two-column raid layout. Fixed 1v1/5v5 arena opponent detection and improved HP/death updates. Added a World bosses history tab and improved history responsiveness. Protected validated player names from stale replacements and corrected shared effect damage attribution across classes. Fixed a compact-meter reset race, mini-map opening without relogging and delayed flight position updates. Full foreign damage rankings at crowded world bosses remain incomplete.",
-    "sha256": "c8f2e8294601b16c77cf88ce0eb216e7ec1c9a08472b10612b1066d1c1cb7e59"
+    "version": "1.1.45",
+    "url": "https://raw.githubusercontent.com/Grachy/aion2t-dps-meter/master/docs/aion2t-dps-setup-1.1.45-x64.exe",
+    "notes": "Mini-map zoom now survives location changes, with a configurable pin/unpin shortcut. PvP personal Slim and row count have their own settings menu. Fixed Combat Assist boss targeting after clearing the game selection. Improved compact PvP controls, ally cooldown choices and game-window following. Added activity-specific Premium idle resets and stricter AUTO location/group filtering. Full foreign damage rankings at crowded world bosses remain incomplete.",
+    "sha256": "fb56ccbb995aad45d755990ec5ced02b6fd0f209fe7f6cc9e355dcacaa1f07da"
 }
