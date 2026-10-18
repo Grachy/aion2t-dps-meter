@@ -1,5 +1,12 @@
 # Release 1.1.46
 
+## Combat Assist
+
+- Fixed cooldown updates being matched to a cast variant instead of its shared cooldown group. Server-reported resets now finish the correct timer, including Poach and other client-catalogued skills across all classes.
+- Correct group timers across confirmed owner aliases; retain unrelated cooldowns and avoid duplicate timers after remaining-time corrections.
+- Fixed buff-tracker selections returning after you deselect them. Checkbox edits use the latest selection, and delayed settings replies no longer restore older choices.
+- The own-buff chooser no longer offers every class catalogue while your class is unknown. Effects observed on your character and saved selections remain available.
+
 ## Focus and overlay behavior
 
 - **Hide while the game is not in focus is disabled by default.** Existing explicit on/off choices are retained.
@@ -37,13 +44,11 @@
 
 ## Validation and download
 
-- **387 Rust tests passed; 7 skipped**, plus cargo check and the optimized x64 release build.
-- Full browser checks passed for **27 obfuscated scripts**, including the exact **883 final asset hashes** after native processing.
-- Verified **1,300 source identities**, all five version files and native/installer metadata as **1.1.46**.
-- Source/built browser tests cover missing/off/on focus preferences. Isolated native Windows checks cover 40 hide/show cycles, Alt mouse modes, focus/capture preservation, active hiding, minimized recovery and a stopped owner UI queue.
-- Two actual Kromede recordings passed mapped replay controls with all five players and the boss positioned in Fire Temple.
-- Npcap prerequisite checks passed all **10 installer languages** and three cases; all five disposable generated update/restart callback tests passed.
+- Before this rebuild, **392 Rust tests passed; 7 were skipped**, together with cargo check and browser regressions for **27 obfuscated scripts**.
+- Rebuilt the optimized x64 installer from source commit `ce9763a`, including the latest Combat Assist fixes. Installer file/product metadata is **1.1.46**, and its SHA-256 was verified.
+- Previously completed focus, replay-map, Npcap and updater checks remain documented in the source repository. Automated suites were not repeated for this installer rebuild.
+- Fresh live checks for kill-triggered cooldown resets, selection persistence and the existing combat/focus release gates remain.
 
-Installer: [aion2t-dps-setup-1.1.46-x64.exe](aion2t-dps-setup-1.1.46-x64.exe) (29,348,445 bytes).
+Installer: [aion2t-dps-setup-1.1.46-x64.exe](aion2t-dps-setup-1.1.46-x64.exe) (29,355,958 bytes).
 
-SHA-256: `89bd1c9c9616a89a9f4d88c81ff0462b59b596999fdf9547c9fa8ab469f3960c`.
+SHA-256: `593f79e7d4d281e92c91044bb33e5e0131799bba216f7c01b3ca27da3a2b90da`.

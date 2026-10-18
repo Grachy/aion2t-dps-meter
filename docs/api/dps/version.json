@@ -1,6 +1,6 @@
 {
     "version": "1.1.46",
     "url": "https://raw.githubusercontent.com/Grachy/aion2t-dps-meter/master/docs/aion2t-dps-setup-1.1.46-x64.exe",
-    "notes": "Focus hiding is off by default, with safer Alt+Tab and overlay restoration. Added configurable personal world-boss skill rows/columns, faster history loading, detached combat replays with original maps for 19 dungeons, corrected Noble Aura and other skill icons, Double Critical labels, and Kromede/group fixes. Full ordinary damage from other players at world bosses, including party/raid members, remains unresolved.",
-    "sha256": "89bd1c9c9616a89a9f4d88c81ff0462b59b596999fdf9547c9fa8ab469f3960c"
+    "notes": "Focus hiding is off by default, with safer Alt+Tab and overlay restoration. Added configurable personal world-boss skill rows/columns, faster history loading, detached combat replays with original maps for 19 dungeons, corrected Noble Aura and other skill icons, Double Critical labels, and Kromede/group fixes. Fixed Combat Assist cooldown-group resets (including Poach) and buff-tracker selections reverting after edits. Full ordinary damage from other players at world bosses, including party/raid members, remains unresolved.",
+    "sha256": "593f79e7d4d281e92c91044bb33e5e0131799bba216f7c01b3ca27da3a2b90da"
 }

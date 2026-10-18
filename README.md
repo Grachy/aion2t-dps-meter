@@ -88,6 +88,8 @@ Mirrors, if the direct link is blocked for you: [Mega (1.1.33)](https://mega.nz/
 
 ## What's New in 1.1.46
 
+- Fixed Combat Assist cooldown-group resets, including Poach, across client-catalogued skill variants.
+- Fixed buff-tracker selections reverting after edits and removed speculative all-class choices while your class is unknown.
 - Focus hiding is **off by default**; safer Alt+Tab, passive overlay restoration and click-through changes.
 - World bosses show your own skill breakdown, with 1-50/all skill rows and 20 selectable columns; choices persist during combat updates.
 - Faster history opening, paged skill rows and deferred graphs, with reliable loading/error handling.
