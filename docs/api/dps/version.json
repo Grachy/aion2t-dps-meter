@@ -1,6 +1,6 @@
 {
-    "version": "1.1.45",
-    "url": "https://raw.githubusercontent.com/Grachy/aion2t-dps-meter/master/docs/aion2t-dps-setup-1.1.45-x64.exe",
-    "notes": "Mini-map zoom now survives location changes, with a configurable pin/unpin shortcut. PvP personal Slim and row count have their own settings menu. Fixed Combat Assist boss targeting after clearing the game selection. Improved compact PvP controls, ally cooldown choices and game-window following. Added activity-specific Premium idle resets and stricter AUTO location/group filtering. Full foreign damage rankings at crowded world bosses remain incomplete.",
-    "sha256": "fb56ccbb995aad45d755990ec5ced02b6fd0f209fe7f6cc9e355dcacaa1f07da"
+    "version": "1.1.46",
+    "url": "https://raw.githubusercontent.com/Grachy/aion2t-dps-meter/master/docs/aion2t-dps-setup-1.1.46-x64.exe",
+    "notes": "Focus hiding is off by default, with safer Alt+Tab and overlay restoration. Added configurable personal world-boss skill rows/columns, faster history loading, detached combat replays with original maps for 19 dungeons, corrected Noble Aura and other skill icons, Double Critical labels, and Kromede/group fixes. Full ordinary damage from other players at world bosses, including party/raid members, remains unresolved.",
+    "sha256": "89bd1c9c9616a89a9f4d88c81ff0462b59b596999fdf9547c9fa8ab469f3960c"
 }
