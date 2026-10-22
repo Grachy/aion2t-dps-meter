@@ -1,6 +1,6 @@
 {
-    "version": "1.1.48",
-    "url": "https://raw.githubusercontent.com/Grachy/aion2t-dps-meter/master/docs/aion2t-dps-setup-1.1.48-x64.exe",
-    "notes": "Improved combat replays, compact party cards, boss targets, effects and attack areas. Added opacity and click-through locks for boss respawns and dungeon groups, with shared Ctrl+M and individual Alt+click. Updated checklist limits, translations and shop/morph data; improved fight details, history icons and resource maps. Installer now explains the required game display mode.",
-    "sha256": "a2559224c0b39f0abed5454cc232780f920ad952861bd3d162315768d5f0d48e"
+    "version": "1.1.49",
+    "url": "https://raw.githubusercontent.com/Grachy/aion2t-dps-meter/master/docs/aion2t-dps-setup-1.1.49-x64.exe",
+    "notes": "Fixed boss respawn overlay visibility when the game is minimized or another application is active. Alerts prioritize Altgard for Asmodians and Verteron for Elyos. Added overlay unlock hints, corrected replay damage attribution with boss/add scope, and fixed cross-server dungeon gathering members.",
+    "sha256": "3e3115da3902078239d72055c9ce161c612744527890772dc7b16bb3ba05a17c"
 }
