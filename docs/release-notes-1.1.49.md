@@ -19,6 +19,7 @@ Updated Windows x64 installer — October 26, 2026. This rebuild includes the or
 ## Hidden cubes and support tools
 
 - Added hidden-cube detection from received game packets, a dedicated overlay and a toolbar button.
+- Added eight-way map directions beside hidden-cube distances in the widget and notifications. Directions update with player position and are hidden when position data is stale or unavailable; arrows follow map north, not camera rotation.
 - Track supported cube types, distance and disappearance, suppress duplicate alerts, and clear observations when changing characters or maps.
 - Added **Record data for support** and **Save report ZIP** in Advanced settings. Recording can be started without restarting the meter.
 
@@ -57,15 +58,15 @@ Updated Windows x64 installer — October 26, 2026. This rebuild includes the or
 
 ## Validation and known limitations
 
-- Optimized x64 build and NSIS packaging passed. **458 Rust tests passed; 7 were ignored**, and `cargo check` passed.
+- Optimized x64 build and NSIS packaging passed. **459 Rust tests passed; 7 were ignored**, and `cargo check` passed.
 - The production UI passed browser checks with 31 obfuscated scripts. Verified 2,959 final asset hashes, 218 merchant runtime files, source inputs and executable/installer version metadata.
 - Global checklist tests include synthetic region/ownership cases and recorded EU data. Fresh NAE values still need comparison with the game; the reported user's debug log did not contain full checklist packet bodies.
 - Background merchant retrieval may require a fresh game connection if the meter starts after the game is already connected. Continuous hourly refresh and reconnect behavior still need live validation.
-- Fresh live combat, cube detection, siege transitions and overlay behavior remain validation items. Other players' full ordinary damage at public bosses remains unresolved, including party/raid members.
+- A real hidden-cube packet and eight simulated player offsets passed direction checks. Fresh live combat, on-screen cube directions, siege transitions and overlay behavior remain validation items. Other players' full ordinary damage at public bosses remains unresolved, including party/raid members.
 - An alternative Invasion interval has not been verified; this build does not claim to fix that reported schedule discrepancy.
 
 Includes all changes from 1.1.48 and 1.1.47. See the [combined release notes](release-notes-1.1.47-1.1.49.md).
 
-Installer: [aion2t-dps-setup-1.1.49-x64.exe](aion2t-dps-setup-1.1.49-x64.exe) (77,277,269 bytes).
+Installer: [aion2t-dps-setup-1.1.49-x64.exe](aion2t-dps-setup-1.1.49-x64.exe) (77,285,119 bytes).
 
-SHA-256: `f9d69acdde963b59605a4441e799c99048cee00ccddcd305d89f2792273eec7a`.
+SHA-256: `3403275125b396dc869916a0482669b6f4c0b3e5eb5d507b04d6e72fef289cb7`.
