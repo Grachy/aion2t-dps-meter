@@ -90,6 +90,8 @@ Mirrors, if the direct link is blocked for you: [Mega (1.1.33)](https://mega.nz/
 
 ## What's New in 1.1.49
 
+- Smaller installer: 50x50 compressed merchant icons and a trimmed helper runtime.
+
 - Added Cloud Merchant and hidden-cube overlays with toolbar buttons; cube distances now include map directions.
 - Merchant skins, pets and rare pets have separate tabs, original icons, skin grade colors and soul progress out of 105. Alerts show short counts in the notification overlay.
 - Premium users can enable background stock retrieval; free users read opened shop tabs and keep the received list until expiry.

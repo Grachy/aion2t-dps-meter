@@ -6,6 +6,7 @@ Updated Windows x64 installer — October 26, 2026. This rebuild includes the or
 
 ## Cloud Merchant
 
+- Reduced installer size by resizing all 1,667 merchant icons to 50x50 WebP and removing unused COM/Pythonwin/MFC and third-party test dependencies from the helper. Item mappings and network protocol code are unchanged.
 - Added a dedicated Cloud Merchant overlay and a toolbar button, with separate **Skins**, **Pets** and **Rare** tabs.
 - Show missing skins when the character's collection is known, and pets that still need progression. Preserve verified skin collections per character; incomplete collection data is shown as unknown rather than treating every skin as missing.
 - Display original item icons, skin grade colors and pet soul progress out of **105**. Rare pets use the selected rare-pet catalogue, including Dionae, Furious Feruk and Phantasmal Lakshmi.
@@ -59,7 +60,8 @@ Updated Windows x64 installer — October 26, 2026. This rebuild includes the or
 ## Validation and known limitations
 
 - Optimized x64 build and NSIS packaging passed. **459 Rust tests passed; 7 were ignored**, and `cargo check` passed.
-- The production UI passed browser checks with 31 obfuscated scripts. Verified 2,959 final asset hashes, 218 merchant runtime files, source inputs and executable/installer version metadata.
+- The compact helper passed 66 Python tests and a packaged local-driver test covering all three shop categories, ordinary continuation and existing connections.
+- The production UI passed browser checks with 31 obfuscated scripts. Verified 2,959 final asset hashes, 154 merchant runtime files, source inputs and executable/installer version metadata.
 - Global checklist tests include synthetic region/ownership cases and recorded EU data. Fresh NAE values still need comparison with the game; the reported user's debug log did not contain full checklist packet bodies.
 - Background merchant retrieval may require a fresh game connection if the meter starts after the game is already connected. Continuous hourly refresh and reconnect behavior still need live validation.
 - A real hidden-cube packet and eight simulated player offsets passed direction checks. Fresh live combat, on-screen cube directions, siege transitions and overlay behavior remain validation items. Other players' full ordinary damage at public bosses remains unresolved, including party/raid members.
@@ -67,6 +69,6 @@ Updated Windows x64 installer — October 26, 2026. This rebuild includes the or
 
 Includes all changes from 1.1.48 and 1.1.47. See the [combined release notes](release-notes-1.1.47-1.1.49.md).
 
-Installer: [aion2t-dps-setup-1.1.49-x64.exe](aion2t-dps-setup-1.1.49-x64.exe) (77,285,119 bytes).
+Installer: [aion2t-dps-setup-1.1.49-x64.exe](aion2t-dps-setup-1.1.49-x64.exe) (44,112,696 bytes).
 
-SHA-256: `3403275125b396dc869916a0482669b6f4c0b3e5eb5d507b04d6e72fef289cb7`.
+SHA-256: `22afc07e9e07f37d0a570ecf806ca7759bee164d199de9b85445d9cb40ea66c6`.

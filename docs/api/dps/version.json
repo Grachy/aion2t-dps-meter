@@ -1,6 +1,6 @@
 {
     "version": "1.1.49",
     "url": "https://raw.githubusercontent.com/Grachy/aion2t-dps-meter/master/docs/aion2t-dps-setup-1.1.49-x64.exe",
-    "notes": "Cloud Merchant and hidden-cube overlays with map directions; Premium background stock, rare pets and skin grade colors; AUTO/party and Tamon damage fixes; Global checklist, siege timing and localization improvements. Rebuilt October 26, 2026; earlier 1.1.49 builds require manual installation.",
-    "sha256": "3403275125b396dc869916a0482669b6f4c0b3e5eb5d507b04d6e72fef289cb7"
+    "notes": "Compact build: 50x50 merchant icons and a smaller helper runtime. Cloud Merchant and hidden-cube overlays with map directions; Premium background stock, rare pets and skin grade colors; AUTO/party and Tamon damage fixes; Global checklist, siege timing and localization improvements. Rebuilt October 26, 2026; earlier 1.1.49 builds require manual installation.",
+    "sha256": "22afc07e9e07f37d0a570ecf806ca7759bee164d199de9b85445d9cb40ea66c6"
 }
