@@ -11,7 +11,9 @@
 
   Mirrors: [Mega (1.1.33)](https://mega.nz/file/XXAABA5I#tkbwLJIuZguiNVIS3VhDyhgNMt1WhZYZ-e_YgDMa0-s) · [Yandex Disk (1.1.33)](https://disk.yandex.com/d/DlnRqPYjbLst4Q)
 
-  [Release notes for 1.1.49](docs/release-notes-1.1.49.md)
+  [Release notes for 1.1.49](docs/release-notes-1.1.49.md) ? [All changes in 1.1.47?1.1.49](docs/release-notes-1.1.47-1.1.49.md)
+
+  Updated October 26, 2026. Already on 1.1.49? Run the new installer manually.
 
   ---
 
@@ -88,13 +90,16 @@ Mirrors, if the direct link is blocked for you: [Mega (1.1.33)](https://mega.nz/
 
 ## What's New in 1.1.49
 
-- Fixed boss respawn overlay visibility when minimizing the game or switching applications; the overlay returns with the game.
-- Alerts now list the character's home region first: Altgard for Asmodians, Verteron for Elyos, regardless of the currently visited map.
-- Added visible unlock hints with the configured shared shortcut and Alt+click for overlay windows.
-- Corrected replay damage attribution and added an explicit boss/add damage scope option.
-- Fixed missing cross-server members in dungeon gathering while preserving empty party slots.
+- Added Cloud Merchant and hidden-cube overlays with toolbar buttons.
+- Merchant skins, pets and rare pets have separate tabs, original icons, skin grade colors and soul progress out of 105. Alerts show short counts in the notification overlay.
+- Premium users can enable background stock retrieval; free users read opened shop tabs and keep the received list until expiry.
+- Fixed AUTO fight resets, missing dungeon participants and inflated damage during Tamon's healing phase; added verified 10v10 opponent rosters.
+- Enabled typed checklist readings across all five Global regions with confirmed character/server ownership.
+- Fixed boss respawn overlay visibility, faction-home alert ordering, Kaira's EU timing and the boss-selection shortcut; siege timers use received game data.
+- Fixed detached-window localization and Premium feature selection closing too early. Added in-app support recording and ZIP export.
+- Retained replay damage/scope corrections, cross-server gathering fixes and visible overlay unlock hints.
 
-[Full release notes and limitations](docs/release-notes-1.1.49.md)
+[Full release notes and known limitations](docs/release-notes-1.1.49.md) ? [Combined notes for 1.1.47?1.1.49](docs/release-notes-1.1.47-1.1.49.md)
 
 ## What's New in 1.1.48
 
