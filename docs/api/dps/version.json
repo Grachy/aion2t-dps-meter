@@ -1,6 +1,6 @@
 {
-    "version": "1.1.50",
-    "url": "https://raw.githubusercontent.com/Grachy/aion2t-dps-meter/master/docs/aion2t-dps-setup-1.1.50-x64.exe",
-    "notes": "Fixed damage attribution for owned objects across classes, AUTO solo skill details, hotkey rebinding and disabled shortcuts. Added Premium refresh feedback and relink guidance, merchant startup/status feedback and matching button styles. Fixed Light/Dark merchant categories in all five Global regions, including NAE. Earlier 1.1.50 builds require manual installation.",
-    "sha256": "fe68ec4889311bcfea0cb92f599d4f8549f83aacc9632360dd029db82d567cde"
+    "version": "1.1.51",
+    "url": "https://raw.githubusercontent.com/Grachy/aion2t-dps-meter/master/docs/aion2t-dps-setup-1.1.51-x64.exe",
+    "notes": "Reduced DPS detail overhead and idle overlay work. Overlays start on explicit use; background merchant service is preserved. Improved merchant stock refresh, added a separate PvP window and configurable merchant/cube fade. In-game merchant card annotations are disabled.",
+    "sha256": "cf97dd396462d5968c5f4218e561455b56ddce65a5e33141c7fd97ba2e585f99"
 }
