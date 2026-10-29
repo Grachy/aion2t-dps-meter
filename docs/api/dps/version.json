@@ -1,6 +1,6 @@
 {
-    "version": "1.1.51",
-    "url": "https://raw.githubusercontent.com/Grachy/aion2t-dps-meter/master/docs/aion2t-dps-setup-1.1.51-x64.exe",
-    "notes": "Reduced DPS detail overhead and idle overlay work. Overlays start on explicit use; background merchant service is preserved. Improved merchant stock refresh, added a separate PvP window and configurable merchant/cube fade. In-game merchant card annotations are disabled.",
-    "sha256": "cf97dd396462d5968c5f4218e561455b56ddce65a5e33141c7fd97ba2e585f99"
+    "version": "1.1.52",
+    "url": "https://raw.githubusercontent.com/Grachy/aion2t-dps-meter/master/docs/aion2t-dps-setup-1.1.52-x64.exe",
+    "notes": "Restore saved overlay switches after restart; add all-class Combat Assist selection and character presets, independent Premium performance controls, official localized effect names, minimap position without the pet roster, safer checklist renames, Premium verification grace, window recovery and single-instance protection.",
+    "sha256": "bd8f43d789c4b4cea75609b2f86d0f16a8dc098ab9e5a499da2397438a2b40ab"
 }
