@@ -1,6 +1,6 @@
 {
-    "version": "1.1.52",
-    "url": "https://raw.githubusercontent.com/Grachy/aion2t-dps-meter/master/docs/aion2t-dps-setup-1.1.52-x64.exe",
-    "notes": "Restore saved overlay switches after restart; add all-class Combat Assist selection and character presets, independent Premium performance controls, official localized effect names, minimap position without the pet roster, safer checklist renames, Premium verification grace, window recovery and single-instance protection.",
-    "sha256": "bd8f43d789c4b4cea75609b2f86d0f16a8dc098ab9e5a499da2397438a2b40ab"
+    "version": "1.1.53",
+    "url": "https://raw.githubusercontent.com/Grachy/aion2t-dps-meter/master/docs/aion2t-dps-setup-1.1.53-x64.exe",
+    "notes": "Keep game TCP streams independent across instance changes; reduce Combat Assist and background UI work, refine preset controls, add Grave Rat to merchant rares, hide empty DPS details and improve early accelerator merchant capture.",
+    "sha256": "44b8eb59600e76fdb00dea4582a47a3bd9cac0606f4a85fe3faa031e5d684f3b"
 }
