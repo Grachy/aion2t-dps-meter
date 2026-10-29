@@ -1,6 +1,6 @@
 {
-    "version": "1.1.53",
-    "url": "https://raw.githubusercontent.com/Grachy/aion2t-dps-meter/master/docs/aion2t-dps-setup-1.1.53-x64.exe",
-    "notes": "Keep game TCP streams independent across instance changes; reduce Combat Assist and background UI work, refine preset controls, add Grave Rat to merchant rares, hide empty DPS details and improve early accelerator merchant capture.",
-    "sha256": "44b8eb59600e76fdb00dea4582a47a3bd9cac0606f4a85fe3faa031e5d684f3b"
+    "version": "1.1.54",
+    "url": "https://raw.githubusercontent.com/Grachy/aion2t-dps-meter/master/docs/aion2t-dps-setup-1.1.54-x64.exe",
+    "notes": "Improve instance and ExitLag reconnect recovery: retain paused TCP framing, handle new handshakes and safely return to earlier connections while preserving exact game ownership.",
+    "sha256": "b398a67c074da31683da475dbd08767168c771900e244c222a4046479035a9a7"
 }
