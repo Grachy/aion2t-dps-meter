@@ -9,7 +9,7 @@
 
   [**⬇ Download v1.1.55**](https://raw.githubusercontent.com/Grachy/aion2t-dps-meter/master/docs/aion2t-dps-setup-1.1.55-x64.exe) · [Website](https://aion2t.com/dps-meter) · [Report a Bug](https://github.com/Grachy/aion2t-dps-meter/issues)
 
-  Mirrors: [Mega (1.1.33)](https://mega.nz/file/XXAABA5I#tkbwLJIuZguiNVIS3VhDyhgNMt1WhZYZ-e_YgDMa0-s) · [Yandex Disk (1.1.33)](https://disk.yandex.com/d/DlnRqPYjbLst4Q)
+  Mirrors: [Mega (1.1.55)](https://mega.nz/file/uOo0CRDb#-Ra2-4bZ7vxwotJgk-6RCHLJj48c757uN7tRVyG1cew) · [Yandex Disk (1.1.55)](https://disk.yandex.com/d/S-6Wpj4_pl34zw)
 
   [Release notes for 1.1.55](docs/release-notes-1.1.55.md) · [All changes in 1.1.47-1.1.49](docs/release-notes-1.1.47-1.1.49.md)
 
@@ -66,7 +66,7 @@ The Npcap installer itself elevates via UAC automatically — you don't need to 
 
 **[⬇ Download aion2t-dps-setup-1.1.55-x64.exe](https://raw.githubusercontent.com/Grachy/aion2t-dps-meter/master/docs/aion2t-dps-setup-1.1.55-x64.exe)**
 
-Mirrors, if the direct link is blocked for you: [Mega (1.1.33)](https://mega.nz/file/XXAABA5I#tkbwLJIuZguiNVIS3VhDyhgNMt1WhZYZ-e_YgDMa0-s) · [Yandex Disk (1.1.33)](https://disk.yandex.com/d/DlnRqPYjbLst4Q)
+Mirrors, if the direct link is blocked for you: [Mega (1.1.55)](https://mega.nz/file/uOo0CRDb#-Ra2-4bZ7vxwotJgk-6RCHLJj48c757uN7tRVyG1cew) · [Yandex Disk (1.1.55)](https://disk.yandex.com/d/S-6Wpj4_pl34zw)
 
 1. Download the installer above
 2. Run it — if Windows SmartScreen appears, click **More info → Run anyway**
@@ -309,7 +309,7 @@ A: Click **More info → Run anyway**. No paid code-signing certificate yet.
 
 **[⬇ Скачать v1.1.55](https://raw.githubusercontent.com/Grachy/aion2t-dps-meter/master/docs/aion2t-dps-setup-1.1.55-x64.exe)**
 
-Зеркала: [Mega (1.1.33)](https://mega.nz/file/XXAABA5I#tkbwLJIuZguiNVIS3VhDyhgNMt1WhZYZ-e_YgDMa0-s) · [Яндекс.Диск (1.1.33)](https://disk.yandex.com/d/DlnRqPYjbLst4Q)
+Зеркала: [Mega (1.1.55)](https://mega.nz/file/uOo0CRDb#-Ra2-4bZ7vxwotJgk-6RCHLJj48c757uN7tRVyG1cew) · [Яндекс.Диск (1.1.33)](https://disk.yandex.com/d/S-6Wpj4_pl34zw)
 
 ### Возможности
 
