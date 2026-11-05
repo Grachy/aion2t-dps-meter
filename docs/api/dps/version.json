@@ -1,6 +1,6 @@
 {
-    "version": "1.1.56",
-    "url": "https://raw.githubusercontent.com/Grachy/aion2t-dps-meter/master/docs/aion2t-dps-setup-1.1.56-x64.exe",
-    "notes": "Improve capture recovery, merchant process tracking and shutdown cleanup; expand the Rare pet list to 49.",
-    "sha256": "c16c2950973e2cf82c1f63fc96d399f42728775c7623cb38f81195442c18a55f"
+    "version": "1.1.57",
+    "url": "https://raw.githubusercontent.com/Grachy/aion2t-dps-meter/master/docs/aion2t-dps-setup-1.1.57-x64.exe",
+    "notes": "Fix Thamon absorption damage and installer languages; optimize the merchant; add checklist removal, transparent minimap names and estimated replay stagger.",
+    "sha256": "0af3e636aa0258dab50d364303aa68f0d57ff6039ca4c3b292a924628ebd8025"
 }
