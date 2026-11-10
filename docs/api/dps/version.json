@@ -1,6 +1,6 @@
 {
-    "version": "1.1.57",
-    "url": "https://raw.githubusercontent.com/Grachy/aion2t-dps-meter/master/docs/aion2t-dps-setup-1.1.57-x64.exe",
-    "notes": "Fix Thamon absorption damage and installer languages; optimize the merchant; add checklist removal, transparent minimap names and estimated replay stagger.",
-    "sha256": "0af3e636aa0258dab50d364303aa68f0d57ff6039ca4c3b292a924628ebd8025"
+    "version": "1.1.58",
+    "url": "https://raw.githubusercontent.com/Grachy/aion2t-dps-meter/master/docs/aion2t-dps-setup-1.1.58-x64.exe",
+    "notes": "Improve fight statistics and merchant performance; add skill column settings, a 100% crit filter, Nightmare history, a history overlay button and separate morph limits.",
+    "sha256": "ade0d62c43f6699ced0320b934510664ec66e210205d026deb45f36178ddafed"
 }
