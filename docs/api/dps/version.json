@@ -1,6 +1,6 @@
 {
-    "version": "1.1.58",
-    "url": "https://raw.githubusercontent.com/Grachy/aion2t-dps-meter/master/docs/aion2t-dps-setup-1.1.58-x64.exe",
-    "notes": "Improve fight statistics and merchant performance; add skill column settings, a 100% crit filter, Nightmare history, a history overlay button and separate morph limits.",
-    "sha256": "ade0d62c43f6699ced0320b934510664ec66e210205d026deb45f36178ddafed"
+    "version": "1.1.59",
+    "url": "https://raw.githubusercontent.com/Grachy/aion2t-dps-meter/master/docs/aion2t-dps-setup-1.1.59-x64.exe",
+    "notes": "Fix a Windows graphics-resource leak and repeated overlay window work. Bound ordinary AUTO combat data to 10 minutes and PvP to 20 minutes while protecting boss fights until saved. Improve AUTO boss transitions and delayed UI updates.",
+    "sha256": "e27c6c8fabe82c0672fc9031d291b92f367cb9f15db15d715783aa069d7795a4"
 }
